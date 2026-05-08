@@ -421,6 +421,30 @@
             "go": "b5c037fb-7c64-4d32-b9a5-6f7d41243d69",
             "component_type": "WaveManager"
           }
+        },
+        {
+          "__type": "PlayerDamageFeedbackHud",
+          "__guid": "11c84cd6-c5fa-4a9c-900a-bb9c3050e891",
+          "__enabled": true,
+          "Flags": 0,
+          "FlashFadeSpeed": 2.8,
+          "FlashStrength": 0.2,
+          "LowHealthMaxAlpha": 0.18,
+          "LowHealthPercent": 0.3,
+          "LowHealthPulseSpeed": 2.5,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerHealth": {
+            "_type": "component",
+            "component_id": "757569fd-f4bb-4461-909f-3a83010d8c47",
+            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
+            "component_type": "PlayerHealth"
+          },
+          "ShowLowHealthWarning": true
         }
       ],
       "Children": []
@@ -892,7 +916,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Test Target",
-      "Position": "0,350,50.0000038",
+      "Position": "0,350,150",
       "Rotation": "0,0,0,1",
       "Scale": "5,1,5",
       "Tags": "",
@@ -987,7 +1011,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Test Spray Wall",
-      "Position": "450,350,50.0000038",
+      "Position": "450,350,150",
       "Rotation": "0,0,0,1",
       "Scale": "5,1,5",
       "Tags": "",
@@ -1114,11 +1138,11 @@
       }
     },
     {
-      "__guid": "23384619-f970-4347-8932-d337dca2b40e",
+      "__guid": "1a861b4a-c968-47c7-9002-e381871d090e",
       "__version": 2,
       "Flags": 0,
-      "Name": "SpawnPoint_1",
-      "Position": "801,0,50",
+      "Name": "Enemy Spawn Points",
+      "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1129,129 +1153,71 @@
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
       "Components": [],
-      "Children": []
-    },
-    {
-      "__guid": "c326a1de-2789-4b0a-8fad-57acb944b6e1",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "SpawnPoint_2",
-      "Position": "0,-800,50",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [],
-      "Children": []
-    },
-    {
-      "__guid": "cb24f480-f506-45ed-9798-458ccf9506f5",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "SpawnPoint_3",
-      "Position": "800,-800,50",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [],
-      "Children": []
-    },
-    {
-      "__guid": "975a3759-3cb4-46cb-8101-19c9ea4e0a41",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Pickup test_smg",
-      "Position": "250,0,40",
-      "Rotation": "0,0,0,1",
-      "Scale": "0.5,0.5,0.5",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
+      "Children": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "43cfe07f-fb0b-4aaa-a981-ad757c367b18",
-          "__enabled": true,
+          "__guid": "cb24f480-f506-45ed-9798-458ccf9506f5",
+          "__version": 2,
           "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Name": "SpawnPoint_3",
+          "Position": "800,-800,50",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": []
         },
         {
-          "__type": "WeaponPickup",
-          "__guid": "f34ead25-8035-40c9-adb3-8b4cf023770d",
-          "__enabled": true,
+          "__guid": "c326a1de-2789-4b0a-8fad-57acb944b6e1",
+          "__version": 2,
           "Flags": 0,
-          "AnimatePickup": true,
-          "BobHeight": 8,
-          "BobSpeed": 2,
-          "DisableAfterPickup": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PickupDistance": 120,
-          "PickupInput": "use",
-          "Player": {
-            "_type": "gameobject",
-            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-          },
-          "PromptTextSize": 24,
-          "RotationSpeed": 90,
-          "WeaponManager": {
-            "_type": "component",
-            "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
-            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
-            "component_type": "WeaponManager"
-          },
-          "WeaponToGive": "test_smg.weapon"
+          "Name": "SpawnPoint_2",
+          "Position": "0,-800,50",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": []
+        },
+        {
+          "__guid": "23384619-f970-4347-8932-d337dca2b40e",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "SpawnPoint_1",
+          "Position": "801,0,50",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": []
         }
-      ],
-      "Children": []
+      ]
     },
     {
-      "__guid": "1a9ccc0f-7212-47ac-8489-fd4c3baf4cd7",
+      "__guid": "5022d8a1-d351-4282-9558-c701bc7da83e",
       "__version": 2,
       "Flags": 0,
-      "Name": "Pickup test_rifle",
-      "Position": "250,-150,40",
+      "Name": "Weapon Pickups",
+      "Position": "-691.101624,-467.446411,500.841156",
       "Rotation": "0,0,0,1",
-      "Scale": "0.5,0.5,0.5",
+      "Scale": "1,1,1",
       "Tags": "",
       "Enabled": true,
       "NetworkMode": 2,
@@ -1259,67 +1225,163 @@
       "NetworkOrphaned": 0,
       "NetworkTransmit": true,
       "OwnerTransfer": 1,
-      "Components": [
+      "Components": [],
+      "Children": [
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "3cd93a70-b34d-41f3-8cee-f29c9f632be1",
-          "__enabled": true,
+          "__guid": "1a9ccc0f-7212-47ac-8489-fd4c3baf4cd7",
+          "__version": 2,
           "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/dev/box.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
+          "Name": "Pickup test_rifle",
+          "Position": "941.101624,317.446411,-460.841156",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.5,0.5,0.5",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3cd93a70-b34d-41f3-8cee-f29c9f632be1",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "WeaponPickup",
+              "__guid": "ac47c24e-c71e-4915-ac11-ea165844ae32",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimatePickup": true,
+              "BobHeight": 8,
+              "BobSpeed": 2,
+              "DisableAfterPickup": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PickupDistance": 120,
+              "PickupInput": "use",
+              "Player": {
+                "_type": "gameobject",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
+              },
+              "PromptTextSize": 24,
+              "RotationSpeed": 90,
+              "WeaponManager": {
+                "_type": "component",
+                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
+                "component_type": "WeaponManager"
+              },
+              "WeaponToGive": "test_rifle.weapon"
+            }
+          ],
+          "Children": []
         },
         {
-          "__type": "WeaponPickup",
-          "__guid": "ac47c24e-c71e-4915-ac11-ea165844ae32",
-          "__enabled": true,
+          "__guid": "975a3759-3cb4-46cb-8101-19c9ea4e0a41",
+          "__version": 2,
           "Flags": 0,
-          "AnimatePickup": true,
-          "BobHeight": 8,
-          "BobSpeed": 2,
-          "DisableAfterPickup": true,
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "PickupDistance": 120,
-          "PickupInput": "use",
-          "Player": {
-            "_type": "gameobject",
-            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-          },
-          "PromptTextSize": 24,
-          "RotationSpeed": 90,
-          "WeaponManager": {
-            "_type": "component",
-            "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
-            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
-            "component_type": "WeaponManager"
-          },
-          "WeaponToGive": "test_rifle.weapon"
+          "Name": "Pickup test_smg",
+          "Position": "941.101624,467.446411,-460.841156",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.5,0.5,0.5",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "43cfe07f-fb0b-4aaa-a981-ad757c367b18",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "WeaponPickup",
+              "__guid": "f34ead25-8035-40c9-adb3-8b4cf023770d",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimatePickup": true,
+              "BobHeight": 8,
+              "BobSpeed": 2,
+              "DisableAfterPickup": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PickupDistance": 120,
+              "PickupInput": "use",
+              "Player": {
+                "_type": "gameobject",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
+              },
+              "PromptTextSize": 24,
+              "RotationSpeed": 90,
+              "WeaponManager": {
+                "_type": "component",
+                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
+                "component_type": "WeaponManager"
+              },
+              "WeaponToGive": "test_smg.weapon"
+            }
+          ],
+          "Children": []
         }
-      ],
-      "Children": []
+      ]
     }
   ],
   "SceneProperties": {
@@ -1342,14 +1404,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

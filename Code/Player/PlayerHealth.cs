@@ -21,6 +21,7 @@ public sealed class PlayerHealth : Component, IGameDamageable
 	private Rotation startRotation;
 
 	public event Action<PlayerHealth> OnDied;
+	public event Action<float, float> OnDamaged;
 
 	public float CurrentHealth => currentHealth;
 	public bool IsDead => isDead;
@@ -47,6 +48,7 @@ public sealed class PlayerHealth : Component, IGameDamageable
 		currentHealth = MathF.Max( currentHealth, 0f );
 
 		Log.Info( $"Player took {damageAmount} damage. Health: {currentHealth}" );
+		OnDamaged?.Invoke( damageAmount, currentHealth );
 
 		if ( currentHealth <= 0f )
 		{
