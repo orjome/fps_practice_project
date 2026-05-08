@@ -713,6 +713,8 @@
           "__guid": "757569fd-f4bb-4461-909f-3a83010d8c47",
           "__enabled": true,
           "Flags": 0,
+          "DeathSound": "sounds/ambience/stings/sting-coyote-sting.sound",
+          "HurtSound": "sounds/impacts/melee/impact-melee-flesh.sound",
           "MaxHealth": 100,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -1012,6 +1014,7 @@
           "__enabled": true,
           "Flags": 0,
           "AwardXpOnDeath": false,
+          "DeathSound": null,
           "MaxHealth": 100,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -1144,6 +1147,14 @@
               "Type": "Component",
               "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
             },
+            "Property": "DeathSound",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
+            },
             "Property": "XpManager",
             "Value": {
               "_type": "component",
@@ -1241,7 +1252,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Weapon Pickups",
-      "Position": "-691.101624,-467.446411,500.841156",
+      "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1258,7 +1269,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Pickup test_rifle",
-          "Position": "941.101624,317.446411,-460.841156",
+          "Position": "250,-150,40",
           "Rotation": "0,0,0,1",
           "Scale": "0.5,0.5,0.5",
           "Tags": "",
@@ -1313,6 +1324,7 @@
               "OnComponentUpdate": null,
               "PickupDistance": 120,
               "PickupInput": "use",
+              "PickupSound": "sounds/error.sound",
               "Player": {
                 "_type": "gameobject",
                 "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
@@ -1335,7 +1347,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Pickup test_smg",
-          "Position": "941.101624,467.446411,-460.841156",
+          "Position": "250,0,40",
           "Rotation": "0,0,0,1",
           "Scale": "0.5,0.5,0.5",
           "Tags": "",
@@ -1390,6 +1402,7 @@
               "OnComponentUpdate": null,
               "PickupDistance": 120,
               "PickupInput": "use",
+              "PickupSound": "sounds/error.sound",
               "Player": {
                 "_type": "gameobject",
                 "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"

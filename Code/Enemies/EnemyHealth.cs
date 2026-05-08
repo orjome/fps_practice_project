@@ -12,6 +12,7 @@ public sealed class EnemyHealth : Component, IGameDamageable
 	[Property] public bool AwardXpOnDeath { get; set; } = true;
 	[Property] public int XpReward { get; set; } = 25;
 	[Property] public XpManager XpManager { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent DeathSound { get; set; }
 
 	private float currentHealth;
 	private bool isDead;
@@ -76,6 +77,10 @@ public sealed class EnemyHealth : Component, IGameDamageable
 		isDead = true;
 
 		Log.Info( $"{GameObject.Name} died." );
+		if ( DeathSound is not null )
+		{
+			Sound.Play( DeathSound, WorldPosition );
+		}
 
 		OnDied?.Invoke( this );
 

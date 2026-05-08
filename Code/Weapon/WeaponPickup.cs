@@ -22,6 +22,7 @@ public sealed class WeaponPickup : Component
 	[Property] public float BobSpeed { get; set; } = 2f;
 
 	[Property] public float PromptTextSize { get; set; } = 24f;
+	[Property, Group( "Audio" )] public SoundEvent PickupSound { get; set; }
 
 	private Vector3 startPosition;
 	private Rotation startRotation;
@@ -91,6 +92,10 @@ public sealed class WeaponPickup : Component
 		isPickedUp = true;
 
 		Log.Info( $"Picked up {WeaponToGive.DisplayName}." );
+		if ( PickupSound is not null && Player is not null )
+		{
+			Sound.Play( PickupSound, Player.WorldPosition );
+		}
 
 		if ( DisableAfterPickup )
 		{

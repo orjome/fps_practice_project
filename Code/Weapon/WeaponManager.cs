@@ -115,6 +115,14 @@ public sealed class WeaponManager : Component
 
 		EquipWeapon( startingWeapon );
 	}
+	private void PlaySoundIfValid( SoundEvent sound )
+	{
+		if ( sound is null )
+			return;
+
+		// WeaponManager is on the Player, so this makes the sound follow the player.
+		GameObject.PlaySound( sound );
+	}
 
 	private void TryFire()
 	{
@@ -127,6 +135,7 @@ public sealed class WeaponManager : Component
 		if ( currentAmmo <= 0 )
 		{
 			Log.Info( "Click! Magazine empty." );
+			PlaySoundIfValid( CurrentWeapon.EmptySound );
 			nextFireTime = Time.Now + 0.2f;
 			StartReload();
 			return;
@@ -143,6 +152,7 @@ public sealed class WeaponManager : Component
 		// That means recoil affects the next shot, not the shot that already happened.
 		FireRaycast( spreadForThisShot );
 		ApplyWeaponFeel();
+		PlaySoundIfValid( CurrentWeapon.FireSound );
 		IncreaseSpread();
 
 		Log.Info( $"Fired {CurrentWeapon.DisplayName}. Ammo: {currentAmmo}/{reserveAmmo}. Shot Spread: {CurrentWeapon.BaseSpread + spreadForThisShot:0.00}, Current Spread: {CurrentWeapon.BaseSpread + currentSpread:0.00}" );
@@ -282,6 +292,7 @@ public sealed class WeaponManager : Component
 		}
 
 		isReloading = true;
+		PlaySoundIfValid( CurrentWeapon.ReloadStartSound );
 
 		int thisReloadVersion = ++reloadVersion;
 		_ = ReloadAfterDelay( thisReloadVersion );
@@ -306,6 +317,8 @@ public sealed class WeaponManager : Component
 		reserveAmmo -= ammoToLoad;
 
 		isReloading = false;
+		PlaySoundIfValid( CurrentWeapon.ReloadCompleteSound );
+
 
 		Log.Info( $"Reload complete. Ammo: {currentAmmo}/{reserveAmmo}" );
 	}

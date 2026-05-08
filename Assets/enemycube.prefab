@@ -3,7 +3,7 @@
     "__guid": "7390b567-931a-45b6-aa26-033c1f4fa0db",
     "__version": 2,
     "Flags": 0,
-    "Name": "EnemyCube",
+    "Name": "enemycube",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1,1,1",
@@ -85,10 +85,7 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "StopDistance": 80,
-        "Target": {
-          "_type": "gameobject",
-          "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-        }
+        "Target": null
       },
       {
         "__type": "EnemyHealth",
@@ -96,6 +93,7 @@
         "__enabled": true,
         "Flags": 0,
         "AwardXpOnDeath": true,
+        "DeathSound": "sounds/kenney/ui/ui.button.deny.sound",
         "MaxHealth": 100,
         "OnComponentDestroy": null,
         "OnComponentDisabled": null,
@@ -105,16 +103,32 @@
         "OnComponentUpdate": null,
         "RespawnDelay": 2,
         "RespawnOnDeath": true,
-        "XpManager": {
-          "_type": "component",
-          "component_id": "a4d5f7ad-5779-4680-b8ac-caa40910f05d",
-          "go": "b5c037fb-7c64-4d32-b9a5-6f7d41243d69",
-          "component_type": "XpManager"
-        },
+        "XpManager": null,
         "XpReward": 25
       }
     ],
-    "Children": []
+    "Children": [],
+    "__properties": {
+      "NetworkInterpolation": true,
+      "TimeScale": 1,
+      "WantsSystemScene": true,
+      "Metadata": {},
+      "NavMesh": {
+        "Enabled": false,
+        "IncludeStaticBodies": true,
+        "IncludeKeyframedBodies": true,
+        "EditorAutoUpdate": false,
+        "AgentHeight": 64,
+        "AgentRadius": 16,
+        "AgentStepSize": 18,
+        "AgentMaxSlope": 40,
+        "ExcludedBodies": "",
+        "IncludedBodies": "",
+        "DeferGeneration": false,
+        "CustomBounds": false
+      }
+    },
+    "__variables": []
   },
   "ResourceVersion": 2,
   "ShowInMenu": false,

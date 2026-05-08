@@ -13,6 +13,8 @@ public sealed class PlayerHealth : Component, IGameDamageable
 
 	[Property] public GameObject RespawnPoint { get; set; }
 	[Property] public WeaponManager WeaponManager { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent HurtSound { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent DeathSound { get; set; }
 
 	private float currentHealth;
 	private bool isDead;
@@ -48,6 +50,10 @@ public sealed class PlayerHealth : Component, IGameDamageable
 		currentHealth = MathF.Max( currentHealth, 0f );
 
 		Log.Info( $"Player took {damageAmount} damage. Health: {currentHealth}" );
+		if ( HurtSound is not null )
+		{
+			Sound.Play( HurtSound );
+		}
 		OnDamaged?.Invoke( damageAmount, currentHealth );
 
 		if ( currentHealth <= 0f )
@@ -64,6 +70,10 @@ public sealed class PlayerHealth : Component, IGameDamageable
 		isDead = true;
 
 		Log.Info( "Player died." );
+		if ( DeathSound is not null )
+		{
+			Sound.Play( DeathSound );
+		}
 
 		if ( WeaponManager is not null )
 		{

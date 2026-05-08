@@ -47,6 +47,12 @@ public partial class WeaponData : GameResource
 
 	[Range( 0f, 30f )]
 	public float SpreadRecoverySpeed { get; set; } = 7f;
+	// Audio
+	[Property, Group( "Audio" )] public SoundEvent FireSound { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent EmptySound { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent ReloadStartSound { get; set; }
+	[Property, Group( "Audio" )] public SoundEvent ReloadCompleteSound { get; set; }
+
 }
 
 

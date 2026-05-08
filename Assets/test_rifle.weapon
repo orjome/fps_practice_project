@@ -14,6 +14,10 @@
   "MaxSpread": 4,
   "SpreadPerShot": 0.6,
   "SpreadRecoverySpeed": 1.5,
+  "FireSound": "sounds/effects/explosion/explosion_small.sound",
+  "EmptySound": "sounds/kenney/ui/ui.button.deny.sound",
+  "ReloadStartSound": "sounds/impacts/melee/impact-melee-cloth.sound",
+  "ReloadCompleteSound": "sounds/impacts/melee/impact-melee-cloth.sound",
   "__references": [],
   "__version": 0
 }
