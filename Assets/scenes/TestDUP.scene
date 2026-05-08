@@ -151,10 +151,17 @@
           "__guid": "0aa58c95-aa61-4bf1-bb7e-b78542f690c1",
           "__enabled": true,
           "Flags": 0,
-          "EnemyTypes": [
-            "basic_enemy.enemy",
-            "runner_enemy.enemy"
-          ],
+          "AttackDamageAddedPerWave": 1,
+          "BaseEnemyAttackDamage": 10,
+          "BaseEnemyHealth": 100,
+          "BaseEnemySpeed": 120,
+          "BaseXpReward": 25,
+          "EnemyPrefab": {
+            "_type": "gameobject",
+            "prefab": "enemycube.prefab"
+          },
+          "HealthAddedPerWave": 15,
+          "MaxEnemySpeed": 220,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -175,10 +182,12 @@
               "go": "cb24f480-f506-45ed-9798-458ccf9506f5"
             }
           ],
+          "SpeedAddedPerWave": 5,
           "Target": {
             "_type": "gameobject",
             "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
           },
+          "XpAddedPerWave": 3,
           "XpManager": {
             "_type": "component",
             "component_id": "a4d5f7ad-5779-4680-b8ac-caa40910f05d",
@@ -235,18 +244,6 @@
               "_type": "component",
               "component_id": "ac47c24e-c71e-4915-ac11-ea165844ae32",
               "go": "1a9ccc0f-7212-47ac-8489-fd4c3baf4cd7",
-              "component_type": "WeaponPickup"
-            },
-            {
-              "_type": "component",
-              "component_id": "b2545359-4fbb-4031-94e2-075e766d066f",
-              "go": "9197a5be-21dd-4761-90cb-1df04d981f16",
-              "component_type": "WeaponPickup"
-            },
-            {
-              "_type": "component",
-              "component_id": "fd8f57f4-5ae0-4d39-8e8b-b1d0a2089b50",
-              "go": "3a542f81-29d7-4571-a6ef-311950eb5e1d",
               "component_type": "WeaponPickup"
             }
           ],
@@ -1111,6 +1108,73 @@
       "Children": []
     },
     {
+      "__guid": "29d2475e-3c8b-48ba-9f1f-7a96ce6f5487",
+      "__version": 2,
+      "__Prefab": "enemycube.prefab",
+      "__PrefabInstancePatch": {
+        "AddedObjects": [],
+        "RemovedObjects": [],
+        "PropertyOverrides": [
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7390b567-931a-45b6-aa26-033c1f4fa0db"
+            },
+            "Property": "Position",
+            "Value": "500,0,50"
+          },
+          {
+            "Target": {
+              "Type": "GameObject",
+              "IdValue": "7390b567-931a-45b6-aa26-033c1f4fa0db"
+            },
+            "Property": "Enabled",
+            "Value": false
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "caaecdc7-814c-4bee-b21d-1cc567c9ade2"
+            },
+            "Property": "Target",
+            "Value": {
+              "_type": "gameobject",
+              "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
+            }
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
+            },
+            "Property": "DeathSound",
+            "Value": null
+          },
+          {
+            "Target": {
+              "Type": "Component",
+              "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
+            },
+            "Property": "XpManager",
+            "Value": {
+              "_type": "component",
+              "component_id": "a4d5f7ad-5779-4680-b8ac-caa40910f05d",
+              "go": "b5c037fb-7c64-4d32-b9a5-6f7d41243d69",
+              "component_type": "XpManager"
+            }
+          }
+        ],
+        "MovedObjects": []
+      },
+      "__PrefabIdToInstanceId": {
+        "7390b567-931a-45b6-aa26-033c1f4fa0db": "29d2475e-3c8b-48ba-9f1f-7a96ce6f5487",
+        "8fe44e2d-680d-492a-86d8-d8124f8c71ea": "2197903d-43cf-489a-ac3f-f93c8cbb29de",
+        "9df77a57-8457-439c-b327-2bbb33bb425f": "52279b30-69b9-4259-8b05-ec6b0bc301e3",
+        "caaecdc7-814c-4bee-b21d-1cc567c9ade2": "cf7e70be-0221-43cc-8254-68320c5aed24",
+        "50e676b7-f0a9-40b8-950e-9279bb17db89": "0bec9491-024f-463b-8203-74255ed51c12"
+      }
+    },
+    {
       "__guid": "1a861b4a-c968-47c7-9002-e381871d090e",
       "__version": 2,
       "Flags": 0,
@@ -1279,167 +1343,11 @@
           "Children": []
         },
         {
-          "__guid": "3a542f81-29d7-4571-a6ef-311950eb5e1d",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Pickup plasma_gun",
-          "Position": "250,-300,40",
-          "Rotation": "0,0,0,1",
-          "Scale": "0.5,0.5,0.5",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "78853342-ea89-40c0-845b-e572be7dac99",
-              "__enabled": true,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,0,0.25,1"
-            },
-            {
-              "__type": "WeaponPickup",
-              "__guid": "fd8f57f4-5ae0-4d39-8e8b-b1d0a2089b50",
-              "__enabled": true,
-              "Flags": 0,
-              "AnimatePickup": true,
-              "BobHeight": 8,
-              "BobSpeed": 2,
-              "DisableAfterPickup": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "PickupDistance": 120,
-              "PickupInput": "use",
-              "PickupSound": "sounds/error.sound",
-              "Player": {
-                "_type": "gameobject",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-              },
-              "PromptTextSize": 24,
-              "RotationSpeed": 90,
-              "WeaponManager": {
-                "_type": "component",
-                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
-                "component_type": "WeaponManager"
-              },
-              "WeaponToGive": "plasma_gun.weapon"
-            }
-          ],
-          "Children": []
-        },
-        {
-          "__guid": "9197a5be-21dd-4761-90cb-1df04d981f16",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Pickup plasma_gravity_gun",
-          "Position": "250,-450,40",
-          "Rotation": "0,0,0,1",
-          "Scale": "0.5,0.5,0.5",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "569ea689-c1e9-428e-a696-bb28b815b333",
-              "__enabled": true,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,0,0.25,1"
-            },
-            {
-              "__type": "WeaponPickup",
-              "__guid": "b2545359-4fbb-4031-94e2-075e766d066f",
-              "__enabled": true,
-              "Flags": 0,
-              "AnimatePickup": true,
-              "BobHeight": 8,
-              "BobSpeed": 2,
-              "DisableAfterPickup": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "PickupDistance": 120,
-              "PickupInput": "use",
-              "PickupSound": "sounds/error.sound",
-              "Player": {
-                "_type": "gameobject",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-              },
-              "PromptTextSize": 24,
-              "RotationSpeed": 90,
-              "WeaponManager": {
-                "_type": "component",
-                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
-                "component_type": "WeaponManager"
-              },
-              "WeaponToGive": "plasma_gravity_gun.weapon"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "975a3759-3cb4-46cb-8101-19c9ea4e0a41",
           "__version": 2,
           "Flags": 0,
           "Name": "Pickup test_smg",
-          "Position": "251,0,40",
+          "Position": "250,0,40",
           "Rotation": "0,0,0,1",
           "Scale": "0.5,0.5,0.5",
           "Tags": "",
@@ -1513,106 +1421,6 @@
           "Children": []
         }
       ]
-    },
-    {
-      "__guid": "d74e84cd-986d-4e8e-bad9-848baeaee944",
-      "__version": 2,
-      "__Prefab": "plasma_projectile.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "9add065f-f1d7-4516-89bb-d656efbbe172"
-            },
-            "Property": "Position",
-            "Value": "-414.23877,-521.825562,611.118652"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "9add065f-f1d7-4516-89bb-d656efbbe172"
-            },
-            "Property": "Enabled",
-            "Value": false
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "9add065f-f1d7-4516-89bb-d656efbbe172": "d74e84cd-986d-4e8e-bad9-848baeaee944",
-        "4fdd0b2b-8d4d-426a-929f-f9b245057bef": "489d82a0-12fe-4905-9fc4-097221e96862",
-        "dca60bbc-4bf9-412a-ac6f-c6cf2be63390": "95173094-f2a4-4ea2-b88b-819715af8023"
-      }
-    },
-    {
-      "__guid": "29d2475e-3c8b-48ba-9f1f-7a96ce6f5487",
-      "__version": 2,
-      "__Prefab": "enemycube.prefab",
-      "__PrefabInstancePatch": {
-        "AddedObjects": [],
-        "RemovedObjects": [],
-        "PropertyOverrides": [
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "7390b567-931a-45b6-aa26-033c1f4fa0db"
-            },
-            "Property": "Position",
-            "Value": "500,0,50"
-          },
-          {
-            "Target": {
-              "Type": "GameObject",
-              "IdValue": "7390b567-931a-45b6-aa26-033c1f4fa0db"
-            },
-            "Property": "Enabled",
-            "Value": false
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "caaecdc7-814c-4bee-b21d-1cc567c9ade2"
-            },
-            "Property": "Target",
-            "Value": {
-              "_type": "gameobject",
-              "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-            }
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
-            },
-            "Property": "DeathSound",
-            "Value": null
-          },
-          {
-            "Target": {
-              "Type": "Component",
-              "IdValue": "50e676b7-f0a9-40b8-950e-9279bb17db89"
-            },
-            "Property": "XpManager",
-            "Value": {
-              "_type": "component",
-              "component_id": "a4d5f7ad-5779-4680-b8ac-caa40910f05d",
-              "go": "b5c037fb-7c64-4d32-b9a5-6f7d41243d69",
-              "component_type": "XpManager"
-            }
-          }
-        ],
-        "MovedObjects": []
-      },
-      "__PrefabIdToInstanceId": {
-        "7390b567-931a-45b6-aa26-033c1f4fa0db": "29d2475e-3c8b-48ba-9f1f-7a96ce6f5487",
-        "8fe44e2d-680d-492a-86d8-d8124f8c71ea": "2197903d-43cf-489a-ac3f-f93c8cbb29de",
-        "9df77a57-8457-439c-b327-2bbb33bb425f": "52279b30-69b9-4259-8b05-ec6b0bc301e3",
-        "caaecdc7-814c-4bee-b21d-1cc567c9ade2": "cf7e70be-0221-43cc-8254-68320c5aed24",
-        "50e676b7-f0a9-40b8-950e-9279bb17db89": "0bec9491-024f-463b-8203-74255ed51c12"
-      }
     }
   ],
   "SceneProperties": {
@@ -1635,14 +1443,14 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
+        }
+      },
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
         }
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {

@@ -1,0 +1,33 @@
+{
+  "DisplayName": "Plasma Gun",
+  "FireMode": "Projectile",
+  "Damage": 75,
+  "FireDistance": 5000,
+  "FireRate": 2,
+  "IsAutomatic": false,
+  "MagazineSize": 8,
+  "StartingReserveAmmo": 32,
+  "ReloadTime": 1.8,
+  "CrosshairKick": 7,
+  "RecoilPitch": 1,
+  "RecoilYaw": 0.4,
+  "BaseSpread": 0.05,
+  "MaxSpread": 1.5,
+  "SpreadPerShot": 0.25,
+  "SpreadRecoverySpeed": 4,
+  "ProjectilePrefab": {
+    "_type": "gameobject",
+    "prefab": "plasma_projectile.prefab"
+  },
+  "ProjectileSpeed": 1300,
+  "ProjectileLifetime": 4,
+  "ProjectileUsesGravity": false,
+  "ProjectileGravityStrength": 800,
+  "ProjectileSpawnForwardOffset": 45,
+  "FireSound": null,
+  "EmptySound": null,
+  "ReloadStartSound": null,
+  "ReloadCompleteSound": null,
+  "__references": [],
+  "__version": 0
+}

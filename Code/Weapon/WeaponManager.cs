@@ -150,7 +150,7 @@ public sealed class WeaponManager : Component
 
 		// Important: fire first, then apply recoil.
 		// That means recoil affects the next shot, not the shot that already happened.
-		FireRaycast( spreadForThisShot );
+		FireCurrentWeapon( spreadForThisShot );
 		ApplyWeaponFeel();
 		PlaySoundIfValid( CurrentWeapon.FireSound );
 		IncreaseSpread();
@@ -178,6 +178,53 @@ public sealed class WeaponManager : Component
 		currentSpread -= CurrentWeapon.SpreadRecoverySpeed * Time.Delta;
 		currentSpread = MathF.Max( currentSpread, 0f );
 	}
+	private void FireCurrentWeapon( float spreadForThisShot )
+	{
+		if ( CurrentWeapon.FireMode == WeaponFireMode.Projectile )
+		{
+			FireProjectile( spreadForThisShot );
+			return;
+		}
+
+		FireRaycast( spreadForThisShot );
+	}
+	private void FireProjectile( float spreadForThisShot )
+{
+	if ( CurrentWeapon.ProjectilePrefab is null )
+	{
+		Log.Warning( $"{CurrentWeapon.DisplayName} is set to Projectile mode but has no ProjectilePrefab assigned." );
+		return;
+	}
+
+	var eye = PlayerController.EyeTransform;
+
+	Vector3 direction = GetSpreadDirection( spreadForThisShot );
+	Vector3 spawnPosition = eye.Position + direction * CurrentWeapon.ProjectileSpawnForwardOffset;
+
+	GameObject projectileObject = CurrentWeapon.ProjectilePrefab.Clone( spawnPosition );
+	projectileObject.WorldRotation = Rotation.LookAt( direction, new Vector3( 0f, 0f, 1f ) );
+
+	var projectile = projectileObject.Components.Get<Projectile>( FindMode.EverythingInSelfAndDescendants );
+
+	if ( projectile is null )
+	{
+		Log.Warning( $"{CurrentWeapon.ProjectilePrefab.Name} does not have a Projectile component." );
+		projectileObject.Destroy();
+		return;
+	}
+
+	projectile.Initialize(
+		GameObject,
+		direction,
+		CurrentWeapon.ProjectileSpeed,
+		CurrentWeapon.Damage,
+		CurrentWeapon.ProjectileLifetime,
+		CurrentWeapon.ProjectileUsesGravity,
+		CurrentWeapon.ProjectileGravityStrength,
+		HitmarkerHud,
+		DamageNumberHud
+	);
+}
 
 	private void FireRaycast( float spreadForThisShot )
 	{

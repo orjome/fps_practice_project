@@ -1,0 +1,20 @@
+{
+  "DisplayName": "Basic Enemy",
+  "EnemyPrefab": {
+    "_type": "gameobject",
+    "prefab": "enemycube.prefab"
+  },
+  "MinWave": 1,
+  "SpawnWeight": 1,
+  "BaseHealth": 100,
+  "HealthAddedPerWave": 15,
+  "BaseMoveSpeed": 120,
+  "SpeedAddedPerWave": 5,
+  "MaxMoveSpeed": 220,
+  "BaseAttackDamage": 10,
+  "AttackDamageAddedPerWave": 1,
+  "BaseXpReward": 25,
+  "XpAddedPerWave": 3,
+  "__references": [],
+  "__version": 0
+}

@@ -1,0 +1,70 @@
+{
+  "RootObject": {
+    "__guid": "9add065f-f1d7-4516-89bb-d656efbbe172",
+    "__version": 2,
+    "Flags": 0,
+    "Name": "plasma_projectile",
+    "Position": "0,0,0",
+    "Rotation": "0,0,0,1",
+    "Scale": "0.150000006,0.150000006,0.150000006",
+    "Tags": "",
+    "Enabled": true,
+    "NetworkMode": 2,
+    "NetworkFlags": 0,
+    "NetworkOrphaned": 0,
+    "NetworkTransmit": true,
+    "OwnerTransfer": 1,
+    "Components": [
+      {
+        "__type": "Sandbox.ModelRenderer",
+        "__guid": "4fdd0b2b-8d4d-426a-929f-f9b245057bef",
+        "__enabled": true,
+        "Flags": 0,
+        "BodyGroups": 18446744073709551615,
+        "CreateAttachments": false,
+        "LodOverride": null,
+        "MaterialGroup": null,
+        "MaterialOverride": null,
+        "Materials": null,
+        "Model": "models/dev/sphere.vmdl",
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "RenderOptions": {
+          "GameLayer": true,
+          "OverlayLayer": false,
+          "BloomLayer": false,
+          "AfterUILayer": false
+        },
+        "RenderType": "On",
+        "Tint": "1,1,1,1"
+      },
+      {
+        "__type": "Projectile",
+        "__guid": "dca60bbc-4bf9-412a-ac6f-c6cf2be63390",
+        "__enabled": true,
+        "Flags": 0,
+        "CollisionRadius": 4,
+        "DebugPathDuration": 0.08,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "ShowDebugPath": true
+      }
+    ],
+    "Children": []
+  },
+  "ResourceVersion": 2,
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "DontBreakAsTemplate": false,
+  "__references": [],
+  "__version": 2
+}

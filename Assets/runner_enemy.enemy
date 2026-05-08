@@ -1,0 +1,20 @@
+{
+  "DisplayName": "Runner Enemy",
+  "EnemyPrefab": {
+    "_type": "gameobject",
+    "prefab": "runnercube.prefab"
+  },
+  "MinWave": 3,
+  "SpawnWeight": 0.65,
+  "BaseHealth": 60,
+  "HealthAddedPerWave": 8,
+  "BaseMoveSpeed": 190,
+  "SpeedAddedPerWave": 7,
+  "MaxMoveSpeed": 300,
+  "BaseAttackDamage": 10,
+  "AttackDamageAddedPerWave": 1,
+  "BaseXpReward": 18,
+  "XpAddedPerWave": 2,
+  "__references": [],
+  "__version": 0
+}
