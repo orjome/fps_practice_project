@@ -1,0 +1,19 @@
+{
+  "DisplayName": "Test SMG",
+  "Damage": 14,
+  "FireDistance": 3500,
+  "FireRate": 13,
+  "IsAutomatic": true,
+  "MagazineSize": 32,
+  "StartingReserveAmmo": 128,
+  "ReloadTime": 1.25,
+  "CrosshairKick": 4,
+  "RecoilPitch": 0.3,
+  "RecoilYaw": 0.45,
+  "BaseSpread": 0.25,
+  "MaxSpread": 5,
+  "SpreadPerShot": 0.45,
+  "SpreadRecoverySpeed": 2.5,
+  "__references": [],
+  "__version": 0
+}

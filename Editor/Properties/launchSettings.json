@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Editor": {
+      "commandName": "Executable",
+      "executablePath": "../../../../../../../Program Files (x86)/Steam/steamapps/common/sbox/sbox-dev.exe",
+      "commandLineArgs": "-project \u0022c:\\users\\littl\\documents\\s\u0026box projects\\fps_practice_project\\fps_practice_project.sbproj\u0022"
+    }
+  }
+}

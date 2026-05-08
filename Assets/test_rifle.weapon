@@ -1,0 +1,19 @@
+{
+  "DisplayName": "Test Rifle",
+  "Damage": 25,
+  "FireDistance": 5000,
+  "FireRate": 8,
+  "IsAutomatic": true,
+  "MagazineSize": 30,
+  "StartingReserveAmmo": 120,
+  "ReloadTime": 1.5,
+  "CrosshairKick": 5,
+  "RecoilPitch": 0.65,
+  "RecoilYaw": 0.25,
+  "BaseSpread": 0.15,
+  "MaxSpread": 4,
+  "SpreadPerShot": 0.6,
+  "SpreadRecoverySpeed": 1.5,
+  "__references": [],
+  "__version": 0
+}
