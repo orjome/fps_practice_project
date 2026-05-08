@@ -40,7 +40,7 @@
           "AfterUILayer": false
         },
         "RenderType": "On",
-        "Tint": "0.63256,0.63256,0.63256,1"
+        "Tint": "1,0,0,1"
       },
       {
         "__type": "Sandbox.BoxCollider",
