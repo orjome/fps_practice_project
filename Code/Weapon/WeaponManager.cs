@@ -13,6 +13,7 @@ public sealed class WeaponManager : Component
 	[Property, Group( "Debug" )] public bool ShowDebugBulletPath { get; set; } = true;
 	[Property, Group( "Debug" )] public float DebugBulletPathDuration { get; set; } = 0.15f;
 	[Property, Group( "Debug" )] public bool DebugDrawFullTrace { get; set; } = true;
+	[Property] public DamageNumberHud DamageNumberHud { get; set; }
 
 	private WeaponData startingWeapon;
 	private int currentAmmo;
@@ -197,6 +198,7 @@ public sealed class WeaponManager : Component
 		{
 			damageable.TakeDamage( CurrentWeapon.Damage );
 			HitmarkerHud?.ShowHitmarker();
+			DamageNumberHud?.ShowDamage( CurrentWeapon.Damage );
 		}
 		else
 		{

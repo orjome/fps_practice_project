@@ -6,9 +6,11 @@ public sealed class WaveHud : Component
 	[Property] public WaveManager WaveManager { get; set; }
 	[Property] public EnemySpawner EnemySpawner { get; set; }
 
-	[Property] public float TextSize { get; set; } = 24f;
 	[Property] public float RightOffset { get; set; } = 40f;
 	[Property] public float TopOffset { get; set; } = 40f;
+
+	[Property] public float PanelWidth { get; set; } = 250f;
+	[Property] public float PanelHeight { get; set; } = 86f;
 
 	protected override void OnUpdate()
 	{
@@ -25,34 +27,37 @@ public sealed class WaveHud : Component
 	{
 		var hud = Scene.Camera.Hud;
 
-		float x = Screen.Width - RightOffset;
+		float x = Screen.Width - RightOffset - PanelWidth;
 		float y = TopOffset;
 
+		var panelRect = new Rect( x, y, PanelWidth, PanelHeight );
+		HudStyle.DrawPanel( hud, panelRect );
+
 		string waveText = $"WAVE {WaveManager.CurrentWave}";
-		string enemyText;
+		string infoText;
 
 		if ( WaveManager.WaitingForNextWave )
 		{
-			enemyText = $"NEXT WAVE IN {MathF.Ceiling( WaveManager.SecondsUntilNextWave )}";
+			infoText = $"NEXT WAVE IN {MathF.Ceiling( WaveManager.SecondsUntilNextWave )}";
 		}
 		else
 		{
-			enemyText = $"ENEMIES {EnemySpawner.TotalKilledThisWave}/{EnemySpawner.TotalToSpawnThisWave}";
+			infoText = $"ENEMIES {EnemySpawner.TotalKilledThisWave} / {EnemySpawner.TotalToSpawnThisWave}";
 		}
 
 		hud.DrawText(
 			waveText,
-			TextSize,
-			Color.White,
-			new Vector2( x, y ),
+			26f,
+			HudStyle.Warning,
+			new Vector2( x + PanelWidth - 18f, y + 16f ),
 			TextFlag.RightTop
 		);
 
 		hud.DrawText(
-			enemyText,
-			TextSize * 0.75f,
-			Color.White,
-			new Vector2( x, y + 32f ),
+			infoText,
+			17f,
+			HudStyle.TextMuted,
+			new Vector2( x + PanelWidth - 18f, y + 50f ),
 			TextFlag.RightTop
 		);
 	}

@@ -1,12 +1,12 @@
 {
   "LocalAssetBrowser.History": {
-    "Value": "[\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Enemies\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Game\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Player\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\HUD\u0022]",
-    "Timeout": 1780855010,
+    "Value": "[\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Enemies\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Game\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\scenes\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Player\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\HUD\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\HUD\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Weapon\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\Game\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Code\\\\HUD\u0022]",
+    "Timeout": 1780855956,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.HistoryIdx": {
-    "Value": "20",
-    "Timeout": 1780855010,
+    "Value": "24",
+    "Timeout": 1780855956,
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
@@ -16,17 +16,17 @@
   },
   "scenes/minimal.scene.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-267.451996,-379.653015,297.790314\u0022,\u0022CameraRotation\u0022:\u0022-0.144858196,0.286023915,0.427963108,0.845017076\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1780855382,
+    "Timeout": 1780856162,
     "DeleteAt": 0
   },
   "SceneView.Viewport0.Settings": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-267.451996,-379.653015,297.790314\u0022,\u0022CameraRotation\u0022:\u0022-0.144858196,0.286023915,0.427963108,0.845017076\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowSkyIn2D\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1780855382,
+    "Timeout": 1780856162,
     "DeleteAt": 0
   },
   "scenes/test.scene.Viewport0": {
-    "Value": "{\u0022CameraPosition\u0022:\u0022-935.75293,-590.490234,623.339966\u0022,\u0022CameraRotation\u0022:\u0022-0.0482025407,0.203123569,0.225806639,0.951540172\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1780855382,
+    "Value": "{\u0022CameraPosition\u0022:\u0022-211.308105,-2106.20874,2105.7373\u0022,\u0022CameraRotation\u0022:\u0022-0.0482025407,0.203123569,0.225806639,0.951540172\u0022,\u0022CameraOrthoHeight\u0022:1000}",
+    "Timeout": 1780856162,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Model.History": {
@@ -36,7 +36,7 @@
   },
   "expand.9c85dfc3-3b83-41b5-a8c2-fed8cbaae9e6.ModelRenderer": {
     "Value": "false",
-    "Timeout": 1780855309,
+    "Timeout": 1780856150,
     "DeleteAt": 0
   },
   "expand.78eb3cc2-177b-4b55-8466-4ebb0ca0040c.CameraComponent": {
@@ -46,32 +46,32 @@
   },
   "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.PlayerController": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780855681,
     "DeleteAt": 0
   },
   "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.MoveModeSwim": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780855681,
     "DeleteAt": 0
   },
   "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.MoveModeLadder": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780855681,
     "DeleteAt": 0
   },
   "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.Dresser": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780855681,
     "DeleteAt": 0
   },
   "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.MoveModeWalk": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780855681,
     "DeleteAt": 0
   },
   ".Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-935.75293,-590.490234,623.339966\u0022,\u0022CameraRotation\u0022:\u0022-0.0482025407,0.203123569,0.225806639,0.951540172\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1780855327,
+    "Timeout": 1780856106,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Model.HistoryIdx": {
@@ -81,32 +81,32 @@
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.SimpleCrosshair": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "expand.7cdffac8-2331-429a-ba68-ec3022da0136.ModelRenderer": {
     "Value": "false",
-    "Timeout": 1780855328,
+    "Timeout": 1780855512,
     "DeleteAt": 0
   },
   "expand.7cdffac8-2331-429a-ba68-ec3022da0136.BoxCollider": {
     "Value": "false",
-    "Timeout": 1780855328,
+    "Timeout": 1780855512,
     "DeleteAt": 0
   },
   "expand.7cdffac8-2331-429a-ba68-ec3022da0136.EnemyHealth": {
     "Value": "false",
-    "Timeout": 1780855328,
+    "Timeout": 1780855512,
     "DeleteAt": 0
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.AmmoHud": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.HitmarkerHud": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "expand.9e3b8b02-45f0-4e12-836f-485f45813d90.ModelRenderer": {
@@ -141,7 +141,7 @@
   },
   "expand.9c85dfc3-3b83-41b5-a8c2-fed8cbaae9e6.BoxCollider": {
     "Value": "false",
-    "Timeout": 1780855309,
+    "Timeout": 1780856150,
     "DeleteAt": 0
   },
   "prefabs/enemycube.prefab.Viewport0": {
@@ -176,17 +176,17 @@
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.XpHud": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.HealthHud": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.WaveHud": {
     "Value": "false",
-    "Timeout": 1780855232,
+    "Timeout": 1780856107,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Weapon Data.HistoryIdx": {
@@ -214,9 +214,24 @@
     "Timeout": 1780855310,
     "DeleteAt": 0
   },
-  "expand.29559ab2-2c26-4d77-8d23-a081f859bf4e.WeaponManager": {
+  "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.PlayerDamageFeedbackHud": {
     "Value": "false",
-    "Timeout": 1780855241,
+    "Timeout": 1780856107,
+    "DeleteAt": 0
+  },
+  "expand.b5c037fb-7c64-4d32-b9a5-6f7d41243d69.EnemySpawner": {
+    "Value": "false",
+    "Timeout": 1780855672,
+    "DeleteAt": 0
+  },
+  "expand.b5c037fb-7c64-4d32-b9a5-6f7d41243d69.WaveManager": {
+    "Value": "false",
+    "Timeout": 1780855673,
+    "DeleteAt": 0
+  },
+  "expand.b5c037fb-7c64-4d32-b9a5-6f7d41243d69.GameOverManager": {
+    "Value": "false",
+    "Timeout": 1780855676,
     "DeleteAt": 0
   }
 }

@@ -344,8 +344,9 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "PanelHeight": 92,
+          "PanelWidth": 230,
           "RightOffset": 40,
-          "TextSize": 28,
           "WeaponManager": {
             "_type": "component",
             "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
@@ -366,13 +367,14 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "PanelHeight": 92,
+          "PanelWidth": 210,
           "PlayerHealth": {
             "_type": "component",
             "component_id": "757569fd-f4bb-4461-909f-3a83010d8c47",
             "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
             "component_type": "PlayerHealth"
-          },
-          "TextSize": 28
+          }
         },
         {
           "__type": "XpHud",
@@ -386,7 +388,8 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
-          "TextSize": 24,
+          "PanelHeight": 86,
+          "PanelWidth": 230,
           "TopOffset": 40,
           "XpManager": {
             "_type": "component",
@@ -412,8 +415,9 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "PanelHeight": 86,
+          "PanelWidth": 250,
           "RightOffset": 40,
-          "TextSize": 24,
           "TopOffset": 40,
           "WaveManager": {
             "_type": "component",
@@ -445,6 +449,22 @@
             "component_type": "PlayerHealth"
           },
           "ShowLowHealthWarning": true
+        },
+        {
+          "__type": "DamageNumberHud",
+          "__guid": "e9080cc5-e5da-405d-805d-0f477b5130e0",
+          "__enabled": true,
+          "Flags": 0,
+          "FloatSpeed": 55,
+          "Lifetime": 0.65,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RandomOffset": 35,
+          "TextSize": 14
         }
       ],
       "Children": []
@@ -654,6 +674,12 @@
             "component_type": "SimpleCrosshair"
           },
           "CurrentWeapon": "test_rifle.weapon",
+          "DamageNumberHud": {
+            "_type": "component",
+            "component_id": "e9080cc5-e5da-405d-805d-0f477b5130e0",
+            "go": "3d45b89a-0f46-4a44-84d7-de2b9e51e8e0",
+            "component_type": "DamageNumberHud"
+          },
           "DebugBulletPathDuration": 0.5,
           "DebugDrawFullTrace": true,
           "HitmarkerHud": {

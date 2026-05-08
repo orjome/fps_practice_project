@@ -4,9 +4,11 @@ public sealed class AmmoHud : Component
 {
 	[Property] public WeaponManager WeaponManager { get; set; }
 
-	[Property] public float TextSize { get; set; } = 28f;
 	[Property] public float RightOffset { get; set; } = 40f;
 	[Property] public float BottomOffset { get; set; } = 40f;
+
+	[Property] public float PanelWidth { get; set; } = 230f;
+	[Property] public float PanelHeight { get; set; } = 92f;
 
 	protected override void OnUpdate()
 	{
@@ -23,30 +25,41 @@ public sealed class AmmoHud : Component
 	{
 		var hud = Scene.Camera.Hud;
 
-		float x = Screen.Width - RightOffset;
-		float y = Screen.Height - BottomOffset;
+		float x = Screen.Width - RightOffset - PanelWidth;
+		float y = Screen.Height - BottomOffset - PanelHeight;
 
-		string ammoText = $"{WeaponManager.CurrentAmmo} / {WeaponManager.ReserveAmmo}";
+		var panelRect = new Rect( x, y, PanelWidth, PanelHeight );
+		HudStyle.DrawPanel( hud, panelRect );
+
 		string weaponText = WeaponManager.WeaponName;
+		string ammoText = WeaponManager.IsReloading
+			? "RELOADING"
+			: $"{WeaponManager.CurrentAmmo} / {WeaponManager.ReserveAmmo}";
+
+		Color ammoColor = HudStyle.TextPrimary;
 
 		if ( WeaponManager.IsReloading )
 		{
-			ammoText = "Reloading...";
+			ammoColor = HudStyle.Warning;
+		}
+		else if ( WeaponManager.CurrentAmmo <= 5 )
+		{
+			ammoColor = HudStyle.Danger;
 		}
 
 		hud.DrawText(
-			weaponText,
-			TextSize * 0.7f,
-			Color.White,
-			new Vector2( x, y - 38f ),
-			TextFlag.RightBottom
+			weaponText.ToUpper(),
+			18f,
+			HudStyle.TextMuted,
+			new Vector2( x + 18f, y + 18f ),
+			TextFlag.LeftTop
 		);
 
 		hud.DrawText(
 			ammoText,
-			TextSize,
-			Color.White,
-			new Vector2( x, y ),
+			34f,
+			ammoColor,
+			new Vector2( x + PanelWidth - 18f, y + PanelHeight - 18f ),
 			TextFlag.RightBottom
 		);
 	}
