@@ -153,7 +153,8 @@
           "Flags": 0,
           "EnemyTypes": [
             "basic_enemy.enemy",
-            "runner_enemy.enemy"
+            "runner_enemy.enemy",
+            "tank_enemy.enemy"
           ],
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -1386,84 +1387,6 @@
           "Children": []
         },
         {
-          "__guid": "9197a5be-21dd-4761-90cb-1df04d981f16",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Pickup plasma_gravity_gun",
-          "Position": "250,-450,40",
-          "Rotation": "0,0,0,1",
-          "Scale": "0.5,0.5,0.5",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "569ea689-c1e9-428e-a696-bb28b815b333",
-              "__enabled": true,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": "models/dev/box.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,0,0.25,1"
-            },
-            {
-              "__type": "WeaponPickup",
-              "__guid": "b2545359-4fbb-4031-94e2-075e766d066f",
-              "__enabled": true,
-              "Flags": 0,
-              "AnimatePickup": true,
-              "BobHeight": 8,
-              "BobSpeed": 2,
-              "DisableAfterPickup": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "PickupDistance": 120,
-              "PickupInput": "use",
-              "PickupSound": "sounds/error.sound",
-              "Player": {
-                "_type": "gameobject",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
-              },
-              "PromptTextSize": 24,
-              "RotationSpeed": 90,
-              "WeaponManager": {
-                "_type": "component",
-                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
-                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
-                "component_type": "WeaponManager"
-              },
-              "WeaponToGive": "plasma_gravity_gun.weapon"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "975a3759-3cb4-46cb-8101-19c9ea4e0a41",
           "__version": 2,
           "Flags": 0,
@@ -1537,6 +1460,84 @@
                 "component_type": "WeaponManager"
               },
               "WeaponToGive": "test_smg.weapon"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "9197a5be-21dd-4761-90cb-1df04d981f16",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Pickup plasma_gravity_gun",
+          "Position": "250,-450,40",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.5,0.5,0.5",
+          "Tags": "",
+          "Enabled": false,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "569ea689-c1e9-428e-a696-bb28b815b333",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,0,0.25,1"
+            },
+            {
+              "__type": "WeaponPickup",
+              "__guid": "b2545359-4fbb-4031-94e2-075e766d066f",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimatePickup": true,
+              "BobHeight": 8,
+              "BobSpeed": 2,
+              "DisableAfterPickup": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PickupDistance": 120,
+              "PickupInput": "use",
+              "PickupSound": "sounds/error.sound",
+              "Player": {
+                "_type": "gameobject",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
+              },
+              "PromptTextSize": 24,
+              "RotationSpeed": 90,
+              "WeaponManager": {
+                "_type": "component",
+                "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
+                "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
+                "component_type": "WeaponManager"
+              },
+              "WeaponToGive": "plasma_gravity_gun.weapon"
             }
           ],
           "Children": []
@@ -1664,13 +1665,13 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {

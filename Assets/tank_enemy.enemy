@@ -1,0 +1,20 @@
+{
+  "DisplayName": "Basic Enemy",
+  "EnemyPrefab": {
+    "_type": "gameobject",
+    "prefab": "tankenemy.prefab"
+  },
+  "MinWave": 5,
+  "SpawnWeight": 0.2,
+  "BaseHealth": 250,
+  "HealthAddedPerWave": 25,
+  "BaseMoveSpeed": 70,
+  "SpeedAddedPerWave": 1,
+  "MaxMoveSpeed": 120,
+  "BaseAttackDamage": 70,
+  "AttackDamageAddedPerWave": 2,
+  "BaseXpReward": 75,
+  "XpAddedPerWave": 8,
+  "__references": [],
+  "__version": 0
+}
