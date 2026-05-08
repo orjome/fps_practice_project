@@ -1,4 +1,5 @@
 using Sandbox;
+using System.Collections.Generic;
 
 public sealed class GameOverManager : Component
 {
@@ -8,6 +9,8 @@ public sealed class GameOverManager : Component
 
 	[Property] public WaveManager WaveManager { get; set; }
 	[Property] public XpManager XpManager { get; set; }
+
+	[Property] public List<WeaponPickup> PickupsToReset { get; set; } = new();
 
 	[Property] public string RestartInput { get; set; } = "use";
 
@@ -92,6 +95,8 @@ public sealed class GameOverManager : Component
 			XpManager.ResetXP();
 		}
 
+		ResetPickups();
+
 		if ( PlayerHealth is not null )
 		{
 			PlayerHealth.ResetPlayerForNewRun();
@@ -100,7 +105,7 @@ public sealed class GameOverManager : Component
 		if ( WeaponManager is not null )
 		{
 			WeaponManager.Enabled = true;
-			WeaponManager.ResetCurrentWeapon();
+			WeaponManager.ResetToStartingWeapon();
 		}
 
 		if ( PlayerController is not null )
@@ -111,6 +116,17 @@ public sealed class GameOverManager : Component
 		if ( WaveManager is not null )
 		{
 			WaveManager.RestartFromWaveOne();
+		}
+	}
+
+	private void ResetPickups()
+	{
+		foreach ( var pickup in PickupsToReset )
+		{
+			if ( pickup.IsValid() )
+			{
+				pickup.ResetPickup();
+			}
 		}
 	}
 

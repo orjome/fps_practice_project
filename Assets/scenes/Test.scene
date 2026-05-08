@@ -233,6 +233,20 @@
           "OnComponentFixedUpdate": null,
           "OnComponentStart": null,
           "OnComponentUpdate": null,
+          "PickupsToReset": [
+            {
+              "_type": "component",
+              "component_id": "f34ead25-8035-40c9-adb3-8b4cf023770d",
+              "go": "975a3759-3cb4-46cb-8101-19c9ea4e0a41",
+              "component_type": "WeaponPickup"
+            },
+            {
+              "_type": "component",
+              "component_id": "ac47c24e-c71e-4915-ac11-ea165844ae32",
+              "go": "1a9ccc0f-7212-47ac-8489-fd4c3baf4cd7",
+              "component_type": "WeaponPickup"
+            }
+          ],
           "PlayerController": {
             "_type": "component",
             "component_id": "96aea62e-cd8b-4d31-8926-939f294b46ca",
@@ -1104,7 +1118,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "SpawnPoint_1",
-      "Position": "800,0,50",
+      "Position": "801,0,50",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -1204,7 +1218,7 @@
           "AnimatePickup": true,
           "BobHeight": 8,
           "BobSpeed": 2,
-          "DestroyAfterPickup": true,
+          "DisableAfterPickup": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1281,7 +1295,7 @@
           "AnimatePickup": true,
           "BobHeight": 8,
           "BobSpeed": 2,
-          "DestroyAfterPickup": true,
+          "DisableAfterPickup": true,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -1328,18 +1342,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
       },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
         }
       },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },

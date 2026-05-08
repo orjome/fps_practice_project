@@ -1,5 +1,6 @@
 using Sandbox;
 using System;
+using System.Collections.Generic;
 
 public sealed class WeaponPickup : Component
 {
@@ -10,7 +11,10 @@ public sealed class WeaponPickup : Component
 
 	[Property] public float PickupDistance { get; set; } = 120f;
 	[Property] public string PickupInput { get; set; } = "use";
-	[Property] public bool DestroyAfterPickup { get; set; } = true;
+
+	// Important: we hide the pickup instead of destroying it.
+	// This lets GameOverManager bring it back when the run restarts.
+	[Property] public bool DisableAfterPickup { get; set; } = true;
 
 	[Property] public bool AnimatePickup { get; set; } = true;
 	[Property] public float RotationSpeed { get; set; } = 90f;
@@ -20,10 +24,16 @@ public sealed class WeaponPickup : Component
 	[Property] public float PromptTextSize { get; set; } = 24f;
 
 	private Vector3 startPosition;
+	private Rotation startRotation;
+	private bool isPickedUp;
+
+	private readonly List<Component> disabledComponents = new();
 
 	protected override void OnStart()
 	{
 		startPosition = WorldPosition;
+		startRotation = WorldRotation;
+		isPickedUp = false;
 
 		if ( WeaponToGive is null )
 		{
@@ -43,6 +53,9 @@ public sealed class WeaponPickup : Component
 
 	protected override void OnUpdate()
 	{
+		if ( isPickedUp )
+			return;
+
 		if ( AnimatePickup )
 		{
 			UpdatePickupAnimation();
@@ -75,12 +88,56 @@ public sealed class WeaponPickup : Component
 		if ( !equipped )
 			return;
 
+		isPickedUp = true;
+
 		Log.Info( $"Picked up {WeaponToGive.DisplayName}." );
 
-		if ( DestroyAfterPickup )
+		if ( DisableAfterPickup )
 		{
-			GameObject.Destroy();
+			DisablePickupVisuals();
 		}
+	}
+
+	private void DisablePickupVisuals()
+	{
+		disabledComponents.Clear();
+
+		foreach ( var component in GameObject.Components.GetAll() )
+		{
+			if ( component == this )
+				continue;
+
+			if ( !component.Enabled )
+				continue;
+
+			component.Enabled = false;
+			disabledComponents.Add( component );
+		}
+	}
+
+	private void EnablePickupVisuals()
+	{
+		foreach ( var component in disabledComponents )
+		{
+			if ( component.IsValid() )
+			{
+				component.Enabled = true;
+			}
+		}
+
+		disabledComponents.Clear();
+	}
+
+	public void ResetPickup()
+	{
+		isPickedUp = false;
+
+		WorldPosition = startPosition;
+		WorldRotation = startRotation;
+
+		EnablePickupVisuals();
+
+		Log.Info( $"{GameObject.Name} pickup reset." );
 	}
 
 	private void UpdatePickupAnimation()

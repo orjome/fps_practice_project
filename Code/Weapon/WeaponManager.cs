@@ -14,6 +14,7 @@ public sealed class WeaponManager : Component
 	[Property, Group( "Debug" )] public float DebugBulletPathDuration { get; set; } = 0.15f;
 	[Property, Group( "Debug" )] public bool DebugDrawFullTrace { get; set; } = true;
 
+	private WeaponData startingWeapon;
 	private int currentAmmo;
 	private int reserveAmmo;
 
@@ -46,6 +47,7 @@ public sealed class WeaponManager : Component
 			return;
 		}
 
+		startingWeapon = CurrentWeapon;
 		EquipWeapon( CurrentWeapon );
 	}
 
@@ -101,6 +103,16 @@ public sealed class WeaponManager : Component
 			return;
 
 		EquipWeapon( CurrentWeapon );
+	}
+	public void ResetToStartingWeapon()
+	{
+		if ( startingWeapon is null )
+		{
+			ResetCurrentWeapon();
+			return;
+		}
+
+		EquipWeapon( startingWeapon );
 	}
 
 	private void TryFire()
