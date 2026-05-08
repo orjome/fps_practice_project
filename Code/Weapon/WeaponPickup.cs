@@ -84,7 +84,7 @@ public sealed class WeaponPickup : Component
 
 	private void PickUpWeapon()
 	{
-		bool equipped = WeaponManager.EquipWeapon( WeaponToGive );
+		bool equipped = WeaponManager.AddOrEquipWeapon( WeaponToGive );
 
 		if ( !equipped )
 			return;

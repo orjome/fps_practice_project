@@ -468,6 +468,28 @@
           "OnComponentUpdate": null,
           "RandomOffset": 35,
           "TextSize": 14
+        },
+        {
+          "__type": "WeaponSlotsHud",
+          "__guid": "3d2bef94-1dad-46bd-87bb-ea707e4693b9",
+          "__enabled": true,
+          "Flags": 0,
+          "CenterYOffset": 92,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SlotGap": 10,
+          "SlotHeight": 46,
+          "SlotWidth": 150,
+          "WeaponManager": {
+            "_type": "component",
+            "component_id": "44fb0fb1-c72e-4af8-a076-29bd7e6d2b93",
+            "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e",
+            "component_type": "WeaponManager"
+          }
         }
       ],
       "Children": []
@@ -676,7 +698,7 @@
             "go": "3d45b89a-0f46-4a44-84d7-de2b9e51e8e0",
             "component_type": "SimpleCrosshair"
           },
-          "CurrentWeapon": "test_rifle.weapon",
+          "CurrentWeapon": null,
           "DamageNumberHud": {
             "_type": "component",
             "component_id": "e9080cc5-e5da-405d-805d-0f477b5130e0",
@@ -691,6 +713,7 @@
             "go": "3d45b89a-0f46-4a44-84d7-de2b9e51e8e0",
             "component_type": "HitmarkerHud"
           },
+          "MaxWeaponSlots": 3,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -704,6 +727,12 @@
             "component_type": "PlayerController"
           },
           "ShowDebugBulletPath": true,
+          "Slot1Input": "weapon_slot_1",
+          "Slot2Input": "weapon_slot_2",
+          "Slot3Input": "weapon_slot_3",
+          "StartingWeapons": [
+            "test_rifle.weapon"
+          ],
           "ViewKick": {
             "_type": "component",
             "component_id": "426e47d6-92f0-4325-ac47-dca40b56d203",
@@ -1188,7 +1217,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Weapon Pickups",
-      "Position": "0,0,0",
+      "Position": "1,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",

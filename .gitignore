@@ -400,3 +400,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /.sbox/thumbnails/sounds
+Assets/scenes/minimal.scene_c
+Assets/scenes/minimal.scene
