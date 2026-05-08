@@ -4,24 +4,13 @@ using System.Collections.Generic;
 
 public sealed class EnemySpawner : Component
 {
-	[Property] public GameObject EnemyPrefab { get; set; }
 	[Property] public GameObject Target { get; set; }
 	[Property] public XpManager XpManager { get; set; }
 
 	[Property] public List<GameObject> SpawnPoints { get; set; } = new();
 
-	[Property, Group( "Wave Scaling" )] public float BaseEnemyHealth { get; set; } = 100f;
-	[Property, Group( "Wave Scaling" )] public float HealthAddedPerWave { get; set; } = 15f;
-
-	[Property, Group( "Wave Scaling" )] public float BaseEnemySpeed { get; set; } = 120f;
-	[Property, Group( "Wave Scaling" )] public float SpeedAddedPerWave { get; set; } = 5f;
-	[Property, Group( "Wave Scaling" )] public float MaxEnemySpeed { get; set; } = 220f;
-
-	[Property, Group( "Wave Scaling" )] public float BaseEnemyAttackDamage { get; set; } = 10f;
-	[Property, Group( "Wave Scaling" )] public float AttackDamageAddedPerWave { get; set; } = 1f;
-
-	[Property, Group( "Wave Scaling" )] public int BaseXpReward { get; set; } = 25;
-	[Property, Group( "Wave Scaling" )] public int XpAddedPerWave { get; set; } = 3;
+	[Property, Group( "Enemy Types" )]
+	public List<EnemyData> EnemyTypes { get; set; } = new();
 
 	private readonly List<GameObject> activeEnemies = new();
 
@@ -59,15 +48,15 @@ public sealed class EnemySpawner : Component
 
 	public void StartWave( int waveNumber, int enemiesToSpawn, int maxActive, float interval )
 	{
-		if ( EnemyPrefab is null )
-		{
-			Log.Warning( "EnemySpawner needs an EnemyPrefab assigned." );
-			return;
-		}
-
 		if ( Target is null )
 		{
 			Log.Warning( "EnemySpawner needs a Target assigned." );
+			return;
+		}
+
+		if ( !HasAvailableEnemyTypeForWave( waveNumber ) )
+		{
+			Log.Warning( $"EnemySpawner has no valid enemy type available for wave {waveNumber}." );
 			return;
 		}
 
@@ -104,30 +93,38 @@ public sealed class EnemySpawner : Component
 
 	private void SpawnEnemy()
 	{
+		EnemyData enemyData = PickEnemyDataForCurrentWave();
+
+		if ( enemyData is null || enemyData.EnemyPrefab is null )
+		{
+			Log.Warning( $"Could not pick valid enemy data for wave {currentWave}." );
+			return;
+		}
+
 		Vector3 spawnPosition = GetNextSpawnPosition();
 
-		GameObject enemy = EnemyPrefab.Clone( spawnPosition );
+		GameObject enemy = enemyData.EnemyPrefab.Clone( spawnPosition );
 
 		totalSpawnedEver++;
 		totalSpawnedThisWave++;
 
-		enemy.Name = $"Enemy_{totalSpawnedEver}";
+		enemy.Name = $"{enemyData.DisplayName}_{totalSpawnedEver}";
 
 		activeEnemies.Add( enemy );
 
-		SetupSpawnedEnemy( enemy );
+		SetupSpawnedEnemy( enemy, enemyData );
 
 		Log.Info( $"Spawned {enemy.Name}. Wave spawned: {totalSpawnedThisWave}/{totalToSpawnThisWave}. Active: {activeEnemies.Count}/{maxActiveEnemies}" );
 	}
 
-	private void SetupSpawnedEnemy( GameObject enemy )
+	private void SetupSpawnedEnemy( GameObject enemy, EnemyData enemyData )
 	{
 		var mover = enemy.Components.Get<EnemyMover>( FindMode.EverythingInSelfAndDescendants );
 
 		if ( mover is not null )
 		{
 			mover.Target = Target;
-			ApplyMoverScaling( mover );
+			ApplyMoverData( mover, enemyData );
 		}
 		else
 		{
@@ -145,7 +142,7 @@ public sealed class EnemySpawner : Component
 				health.XpManager = XpManager;
 			}
 
-			ApplyHealthScaling( health );
+			ApplyHealthData( health, enemyData );
 
 			health.OnDied += HandleEnemyDied;
 		}
@@ -155,32 +152,88 @@ public sealed class EnemySpawner : Component
 		}
 	}
 
-	private void ApplyHealthScaling( EnemyHealth health )
+	private void ApplyHealthData( EnemyHealth health, EnemyData enemyData )
 	{
-		int waveIndex = currentWave - 1;
-
-		float scaledHealth = BaseEnemyHealth + HealthAddedPerWave * waveIndex;
-		int scaledXp = BaseXpReward + XpAddedPerWave * waveIndex;
+		float scaledHealth = enemyData.GetHealthForWave( currentWave );
+		int scaledXp = enemyData.GetXpRewardForWave( currentWave );
 
 		health.SetMaxHealth( scaledHealth, true );
 		health.SetXpReward( scaledXp );
 
-		Log.Info( $"{health.GameObject.Name} scaled health: {scaledHealth}, XP reward: {scaledXp}" );
+		Log.Info( $"{health.GameObject.Name} health: {scaledHealth}, XP reward: {scaledXp}" );
 	}
 
-	private void ApplyMoverScaling( EnemyMover mover )
+	private void ApplyMoverData( EnemyMover mover, EnemyData enemyData )
 	{
-		int waveIndex = currentWave - 1;
-
-		float scaledSpeed = BaseEnemySpeed + SpeedAddedPerWave * waveIndex;
-		scaledSpeed = MathF.Min( scaledSpeed, MaxEnemySpeed );
-
-		float scaledAttackDamage = BaseEnemyAttackDamage + AttackDamageAddedPerWave * waveIndex;
+		float scaledSpeed = enemyData.GetMoveSpeedForWave( currentWave );
+		float scaledAttackDamage = enemyData.GetAttackDamageForWave( currentWave );
 
 		mover.MoveSpeed = scaledSpeed;
 		mover.AttackDamage = scaledAttackDamage;
 
-		Log.Info( $"{mover.GameObject.Name} scaled speed: {scaledSpeed}, attack damage: {scaledAttackDamage}" );
+		Log.Info( $"{mover.GameObject.Name} speed: {scaledSpeed}, attack damage: {scaledAttackDamage}" );
+	}
+
+	private EnemyData PickEnemyDataForCurrentWave()
+	{
+		var availableTypes = GetAvailableEnemyTypesForWave( currentWave );
+
+		if ( availableTypes.Count == 0 )
+			return null;
+
+		float totalWeight = 0f;
+
+		foreach ( var enemyType in availableTypes )
+		{
+			totalWeight += MathF.Max( 0f, enemyType.SpawnWeight );
+		}
+
+		if ( totalWeight <= 0f )
+			return availableTypes[0];
+
+		float randomValue = Random.Shared.NextSingle() * totalWeight;
+		float runningWeight = 0f;
+
+		foreach ( var enemyType in availableTypes )
+		{
+			runningWeight += MathF.Max( 0f, enemyType.SpawnWeight );
+
+			if ( randomValue <= runningWeight )
+			{
+				return enemyType;
+			}
+		}
+
+		return availableTypes[^1];
+	}
+
+	private List<EnemyData> GetAvailableEnemyTypesForWave( int waveNumber )
+	{
+		var availableTypes = new List<EnemyData>();
+
+		foreach ( var enemyType in EnemyTypes )
+		{
+			if ( enemyType is null )
+				continue;
+
+			if ( enemyType.EnemyPrefab is null )
+				continue;
+
+			if ( waveNumber < enemyType.MinWave )
+				continue;
+
+			if ( enemyType.SpawnWeight <= 0f )
+				continue;
+
+			availableTypes.Add( enemyType );
+		}
+
+		return availableTypes;
+	}
+
+	private bool HasAvailableEnemyTypeForWave( int waveNumber )
+	{
+		return GetAvailableEnemyTypesForWave( waveNumber ).Count > 0;
 	}
 
 	private Vector3 GetNextSpawnPosition()
@@ -233,10 +286,6 @@ public sealed class EnemySpawner : Component
 		OnWaveCompleted?.Invoke();
 	}
 
-	private void CleanActiveEnemyList()
-	{
-		activeEnemies.RemoveAll( enemy => !enemy.IsValid() );
-	}
 	public void StopSpawning( bool clearActiveEnemies )
 	{
 		waveRunning = false;
@@ -265,5 +314,10 @@ public sealed class EnemySpawner : Component
 		totalKilledThisWave = 0;
 
 		Log.Info( "Active enemies cleared." );
+	}
+
+	private void CleanActiveEnemyList()
+	{
+		activeEnemies.RemoveAll( enemy => !enemy.IsValid() );
 	}
 }

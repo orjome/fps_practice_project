@@ -151,17 +151,10 @@
           "__guid": "0aa58c95-aa61-4bf1-bb7e-b78542f690c1",
           "__enabled": true,
           "Flags": 0,
-          "AttackDamageAddedPerWave": 1,
-          "BaseEnemyAttackDamage": 10,
-          "BaseEnemyHealth": 100,
-          "BaseEnemySpeed": 120,
-          "BaseXpReward": 25,
-          "EnemyPrefab": {
-            "_type": "gameobject",
-            "prefab": "enemycube.prefab"
-          },
-          "HealthAddedPerWave": 15,
-          "MaxEnemySpeed": 220,
+          "EnemyTypes": [
+            "basic_enemy.enemy",
+            "runner_enemy.enemy"
+          ],
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
           "OnComponentEnabled": null,
@@ -182,12 +175,10 @@
               "go": "cb24f480-f506-45ed-9798-458ccf9506f5"
             }
           ],
-          "SpeedAddedPerWave": 5,
           "Target": {
             "_type": "gameobject",
             "go": "29559ab2-2c26-4d77-8d23-a081f859bf4e"
           },
-          "XpAddedPerWave": 3,
           "XpManager": {
             "_type": "component",
             "component_id": "a4d5f7ad-5779-4680-b8ac-caa40910f05d",
@@ -1448,13 +1439,13 @@
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
         }
       },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
