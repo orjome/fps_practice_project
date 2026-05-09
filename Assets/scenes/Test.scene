@@ -2,6 +2,38 @@
   "__guid": "f32ebe64-a7b9-4c0e-bc77-49d6bc1b731e",
   "GameObjects": [
     {
+      "__guid": "f308adfa-8c34-4fc3-a1a7-5ae6a0e16783",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Lighting_Ambient",
+      "Position": "5,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.AmbientLight",
+          "__guid": "d35c9154-96a2-4527-8449-bf493744cea9",
+          "__enabled": true,
+          "Flags": 0,
+          "Color": "0.5,0.5,0.5,1",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": []
+    },
+    {
       "__guid": "f36c0f6f-c8dc-492c-b832-7e34070f2f95",
       "__version": 2,
       "Flags": 0,
@@ -1665,6 +1697,11 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.SelectionSetsSystem": {
+        "Data": {
+          "SelectionSets": []
+        }
+      },
       "Sandbox.Clutter.ClutterGridSystem": {
         "Storage": {
           "$blob": "4d1ddaab-73e4-4f28-9f29-022f104e12f4"
@@ -1672,11 +1709,6 @@
       },
       "Sandbox.MovieMaker.MovieRecorderSystem": {
         "DisableClientRecording": false
-      },
-      "Sandbox.SelectionSetsSystem": {
-        "Data": {
-          "SelectionSets": []
-        }
       }
     }
   },
