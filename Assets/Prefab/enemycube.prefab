@@ -76,6 +76,7 @@
         "AttackCooldown": 1,
         "AttackDamage": 10,
         "AttackDistance": 90,
+        "CollisionRadius": 16,
         "FaceTarget": true,
         "MoveSpeed": 120,
         "OnComponentDestroy": null,
@@ -85,7 +86,8 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "StopDistance": 80,
-        "Target": null
+        "Target": null,
+        "UseCollisionTrace": true
       },
       {
         "__type": "EnemyHealth",

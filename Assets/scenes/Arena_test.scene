@@ -6,7 +6,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Lighting",
-      "Position": "-447.459778,-107.574905,0",
+      "Position": "-450,-100,0",
       "Rotation": "0,0,0,1",
       "Scale": "0.5,0.5,1",
       "Tags": "",
@@ -6090,9 +6090,6 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
-      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
@@ -6102,6 +6099,9 @@
         "Storage": {
           "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
         }
+      },
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },

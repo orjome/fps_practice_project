@@ -12,6 +12,9 @@ public sealed class EnemyMover : Component
 	[Property] public float AttackDamage { get; set; } = 10f;
 	[Property] public float AttackCooldown { get; set; } = 1f;
 
+	[Property, Group( "Collision" )] public bool UseCollisionTrace { get; set; } = true;
+	[Property, Group( "Collision" )] public float CollisionRadius { get; set; } = 24f;
+
 	private float nextAttackTime;
 
 	protected override void OnStart()
@@ -45,13 +48,32 @@ public sealed class EnemyMover : Component
 			return;
 
 		Vector3 direction = toTarget.Normal;
+		Vector3 moveAmount = direction * MoveSpeed * Time.Delta;
+		Vector3 desiredPosition = enemyPosition + moveAmount;
 
-		WorldPosition += direction * MoveSpeed * Time.Delta;
+		if ( CanMoveToPosition( enemyPosition, desiredPosition ) )
+		{
+			WorldPosition = desiredPosition;
+		}
 
 		if ( FaceTarget )
 		{
 			WorldRotation = Rotation.LookAt( direction, new Vector3( 0f, 0f, 1f ) );
 		}
+	}
+
+	private bool CanMoveToPosition( Vector3 fromPosition, Vector3 toPosition )
+	{
+		if ( !UseCollisionTrace )
+			return true;
+
+		var trace = Scene.Trace
+			.Ray( fromPosition, toPosition )
+			.Radius( CollisionRadius )
+			.IgnoreGameObjectHierarchy( GameObject )
+			.Run();
+
+		return !trace.Hit;
 	}
 
 	private void TryAttackTarget()
@@ -82,12 +104,8 @@ public sealed class EnemyMover : Component
 		Log.Info( $"{GameObject.Name} attacked {Target.Name} for {AttackDamage} damage." );
 	}
 
-	// Add this null check at the top of the method:
 	private IGameDamageable FindDamageableOnObject( GameObject targetObject )
 	{
-		if ( targetObject is null )
-			return null;
-
 		foreach ( var component in targetObject.Components.GetAll() )
 		{
 			if ( component is IGameDamageable damageable )

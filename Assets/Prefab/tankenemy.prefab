@@ -3,7 +3,7 @@
     "__guid": "7390b567-931a-45b6-aa26-033c1f4fa0db",
     "__version": 2,
     "Flags": 0,
-    "Name": "tank_enemy",
+    "Name": "tankenemy",
     "Position": "0,0,0",
     "Rotation": "0,0,0,1",
     "Scale": "1.5,4,4",
@@ -76,6 +76,7 @@
         "AttackCooldown": 1,
         "AttackDamage": 10,
         "AttackDistance": 90,
+        "CollisionRadius": 32,
         "FaceTarget": true,
         "MoveSpeed": 120,
         "OnComponentDestroy": null,
@@ -85,7 +86,8 @@
         "OnComponentStart": null,
         "OnComponentUpdate": null,
         "StopDistance": 80,
-        "Target": null
+        "Target": null,
+        "UseCollisionTrace": true
       },
       {
         "__type": "EnemyHealth",
