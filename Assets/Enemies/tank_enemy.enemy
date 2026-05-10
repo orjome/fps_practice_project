@@ -2,7 +2,7 @@
   "DisplayName": "Basic Enemy",
   "EnemyPrefab": {
     "_type": "gameobject",
-    "prefab": "tankenemy.prefab"
+    "prefab": "prefab/tankenemy.prefab"
   },
   "MinWave": 5,
   "SpawnWeight": 0.2,

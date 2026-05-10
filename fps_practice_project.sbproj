@@ -8,7 +8,11 @@
   "Resources": null,
   "PackageReferences": [],
   "EditorReferences": null,
-  "Mounts": null,
+  "Mounts": [
+    "czero",
+    "cstrike",
+    "dmc"
+  ],
   "IsStandaloneOnly": false,
   "Metadata": {
     "MaxPlayers": 64,

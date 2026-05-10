@@ -2,7 +2,7 @@
   "DisplayName": "Runner Enemy",
   "EnemyPrefab": {
     "_type": "gameobject",
-    "prefab": "runnercube.prefab"
+    "prefab": "prefab/runnercube.prefab"
   },
   "MinWave": 3,
   "SpawnWeight": 0.65,

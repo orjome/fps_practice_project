@@ -2,7 +2,7 @@
   "DisplayName": "Basic Enemy",
   "EnemyPrefab": {
     "_type": "gameobject",
-    "prefab": "enemycube.prefab"
+    "prefab": "prefab/enemycube.prefab"
   },
   "MinWave": 1,
   "SpawnWeight": 1,
