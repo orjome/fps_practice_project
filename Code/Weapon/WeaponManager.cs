@@ -40,6 +40,8 @@ public sealed partial class WeaponManager : Component
 
 	private int currentSlotIndex = -1;
 	private bool isReloading;
+	private bool isAiming;
+	private float currentFOV;
 	private float nextFireTime;
 	private float currentSpread;
 	private int reloadVersion;
@@ -52,7 +54,7 @@ public sealed partial class WeaponManager : Component
 	public float CurrentSpread => currentSpread;
 	public int CurrentSlotNumber => currentSlotIndex + 1;
 	public int WeaponCount => inventorySlots.Count;
-
+	public bool IsAiming => isAiming;
 	private WeaponInventorySlot CurrentSlot
 	{
 		get
@@ -82,10 +84,11 @@ public sealed partial class WeaponManager : Component
 		if ( PlayerController is null || CurrentWeapon is null )
 			return;
 
+		HandleAiming();
 		UpdateWeaponVisuals();
 		HandleWeaponSlotInput();
 
-		if ( Input.Pressed( "reload" ) )
+		if ( Input.Pressed( "reload" ) && !isAiming )
 		{
 			StartReload();
 		}

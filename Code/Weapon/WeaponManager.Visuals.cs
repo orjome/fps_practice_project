@@ -28,10 +28,30 @@ public sealed partial class WeaponManager : Component
 		if ( ViewModelRootFollowsCamera && ViewModelRoot.IsValid() )
 		{
 			var eye = PlayerController.EyeTransform;
-
 			ViewModelRoot.WorldPosition = eye.Position;
 			ViewModelRoot.WorldRotation = eye.Rotation;
 		}
+
+		UpdateViewModelAimOffset();
+	}
+
+	private void UpdateViewModelAimOffset()
+	{
+		if ( !activeViewModel.IsValid() || CurrentWeapon is null )
+			return;
+
+		float speed = isAiming ? CurrentWeapon.AimInSpeed : CurrentWeapon.AimOutSpeed;
+
+		Vector3 targetPos = isAiming
+			? CurrentWeapon.AimPositionOffset
+			: CurrentWeapon.ViewModelPositionOffset;
+
+		Rotation targetRot = isAiming
+			? Rotation.From( CurrentWeapon.AimRotationOffset )
+			: Rotation.From( CurrentWeapon.ViewModelRotationOffset );
+
+		activeViewModel.LocalPosition = activeViewModel.LocalPosition.LerpTo( targetPos, speed * Time.Delta );
+		activeViewModel.LocalRotation = Rotation.Lerp( activeViewModel.LocalRotation, targetRot, speed * Time.Delta );
 	}
 
 	private void RefreshWeaponVisuals()

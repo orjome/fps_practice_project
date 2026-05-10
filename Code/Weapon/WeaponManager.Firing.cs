@@ -32,7 +32,9 @@ public sealed partial class WeaponManager : Component
 		float secondsBetweenShots = 1f / MathF.Max( CurrentWeapon.FireRate, 0.01f );
 		nextFireTime = Time.Now + secondsBetweenShots;
 
-		float spreadForThisShot = currentSpread;
+		float spreadForThisShot = isAiming
+	? currentSpread * CurrentWeapon.AimSpreadMultiplier
+	: currentSpread;
 
 		FireCurrentWeapon( spreadForThisShot );
 		ApplyWeaponFeel();

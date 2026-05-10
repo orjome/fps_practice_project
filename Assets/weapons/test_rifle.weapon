@@ -15,6 +15,13 @@
   "MaxSpread": 4.5,
   "SpreadPerShot": 0.22,
   "SpreadRecoverySpeed": 4.5,
+  "AimFOV": 60,
+  "AimSensitivity": 0.6,
+  "AimInSpeed": 8,
+  "AimOutSpeed": 10,
+  "AimPositionOffset": "0,0,0",
+  "AimRotationOffset": "0,0,0",
+  "AimSpreadMultiplier": 0.25,
   "ProjectilePrefab": null,
   "ProjectileSpeed": 1400,
   "ProjectileLifetime": 4,
@@ -25,7 +32,7 @@
     "_type": "gameobject",
     "prefab": "prefab/v_m4a1fp.prefab"
   },
-  "ViewModelPositionOffset": "5,-3.5,0",
+  "ViewModelPositionOffset": "8,-5,-2",
   "ViewModelRotationOffset": "0,0,0",
   "ViewModelScale": 1,
   "WorldModelPrefab": {

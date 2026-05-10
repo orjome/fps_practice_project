@@ -59,6 +59,26 @@ public partial class WeaponData : GameResource
 
 	[Property, Group( "Spread" ), Range( 0f, 30f )]
 	public float SpreadRecoverySpeed { get; set; } = 7f;
+	[Property, Group( "ADS" )]
+	public float AimFOV { get; set; } = 60f;
+
+	[Property, Group( "ADS" ), Range( 0.1f, 1f )]
+	public float AimSensitivity { get; set; } = 0.6f;
+
+	[Property, Group( "ADS" ), Range( 1f, 20f )]
+	public float AimInSpeed { get; set; } = 8f;
+
+	[Property, Group( "ADS" ), Range( 1f, 20f )]
+	public float AimOutSpeed { get; set; } = 10f;
+
+	[Property, Group( "ADS" )]
+	public Vector3 AimPositionOffset { get; set; } = Vector3.Zero;
+
+	[Property, Group( "ADS" )]
+	public Angles AimRotationOffset { get; set; } = Angles.Zero;
+
+	[Property, Group( "ADS" ), Range( 0f, 1f )]
+	public float AimSpreadMultiplier { get; set; } = 0.25f;
 
 	// Projectile settings.
 	[Property, Group( "Projectile" )]

@@ -1276,7 +1276,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Building corner",
-          "Position": "-4050.76904,-2729.02686,55",
+          "Position": "-4050,-2729.02686,55",
           "Rotation": "0,-0,-0.707106769,0.707106769",
           "Scale": "1,10,1.20000005",
           "Tags": "",
@@ -5922,7 +5922,7 @@
           "Components": [],
           "Children": [
             {
-              "__guid": "da4f731b-bf5a-4edf-9fcb-e5d3902a8940",
+              "__guid": "4c23a71a-ba26-43fd-a617-efb5cd9256ce",
               "__version": 2,
               "__Prefab": "prefab/v_physgun.prefab",
               "__PrefabInstancePatch": {
@@ -5939,7 +5939,8 @@
                 "MovedObjects": []
               },
               "__PrefabIdToInstanceId": {
-                "03a563ac-cc65-479a-8cc2-9295fe1cd7e5": "da4f731b-bf5a-4edf-9fcb-e5d3902a8940"
+                "31c99985-f57b-4fe6-8822-83231bb4ab55": "4c23a71a-ba26-43fd-a617-efb5cd9256ce",
+                "b6b3c266-7902-4d42-8df2-6a42be220f39": "2e80d208-ba31-40d8-a425-2c7e5164b3e5"
               }
             },
             {
@@ -6561,6 +6562,11 @@
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
+        }
+      },
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "c7a0d06d-580a-4acf-89e5-3f7144b797dd"
         }
       }
     }
