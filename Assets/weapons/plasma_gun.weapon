@@ -24,10 +24,24 @@
   "ProjectileUsesGravity": false,
   "ProjectileGravityStrength": 800,
   "ProjectileSpawnForwardOffset": 45,
-  "FireSound": null,
-  "EmptySound": null,
-  "ReloadStartSound": null,
-  "ReloadCompleteSound": null,
+  "ViewModelPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefab/v_physgun.prefab"
+  },
+  "ViewModelPositionOffset": "35,-14,-10",
+  "ViewModelRotationOffset": "0,0,0",
+  "ViewModelScale": 1,
+  "WorldModelPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefab/w_physgun.prefab"
+  },
+  "WorldModelPositionOffset": "0,0,0",
+  "WorldModelRotationOffset": "0,0,0",
+  "WorldModelScale": 1,
+  "FireSound": "sounds/m4a1_shooting.sound",
+  "EmptySound": "sounds/rifle_dryfire.sound",
+  "ReloadStartSound": "sounds/m4a1_reload_out.sound",
+  "ReloadCompleteSound": "sounds/m4a1_reload_in.sound",
   "__references": [],
   "__version": 0
 }

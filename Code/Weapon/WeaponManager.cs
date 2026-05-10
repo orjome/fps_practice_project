@@ -82,6 +82,7 @@ public sealed partial class WeaponManager : Component
 		if ( PlayerController is null || CurrentWeapon is null )
 			return;
 
+		UpdateWeaponVisuals();
 		HandleWeaponSlotInput();
 
 		if ( Input.Pressed( "reload" ) )

@@ -158,6 +158,7 @@ public sealed partial class WeaponManager : Component
 
 		currentSlotIndex = slotIndex;
 		CurrentWeapon = inventorySlots[currentSlotIndex].Weapon;
+		RefreshWeaponVisuals();
 
 		Log.Info( $"Switched to slot {currentSlotIndex + 1}: {CurrentWeapon.DisplayName}. Ammo: {CurrentAmmo}/{ReserveAmmo}" );
 

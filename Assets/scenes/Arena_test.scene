@@ -5650,17 +5650,28 @@
             "component_type": "PlayerController"
           },
           "ShowDebugBulletPath": true,
+          "ShowViewModel": true,
+          "ShowWorldModel": false,
           "Slot1Input": "weapon_slot_1",
           "Slot2Input": "weapon_slot_2",
           "Slot3Input": "weapon_slot_3",
           "StartingWeapons": [
-            "weapons/test_rifle.weapon"
+            "weapons/plasma_gun.weapon"
           ],
           "ViewKick": {
             "_type": "component",
             "component_id": "38e885ec-daf6-4134-bf13-79bbe8af78c0",
             "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
             "component_type": "WeaponViewKick"
+          },
+          "ViewModelRoot": {
+            "_type": "gameobject",
+            "go": "1e83f7c2-3d9d-4e5d-aa74-b2c2d3be90cf"
+          },
+          "ViewModelRootFollowsCamera": true,
+          "WorldModelRoot": {
+            "_type": "gameobject",
+            "go": "b65cced4-fd78-4d07-914f-b19add467f30"
           }
         },
         {
@@ -5849,7 +5860,7 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Main Camera",
-          "Position": "0,0,0",
+          "Position": "0,0,64",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "maincamera",
@@ -5891,6 +5902,188 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "1e83f7c2-3d9d-4e5d-aa74-b2c2d3be90cf",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "View Model",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": [
+            {
+              "__guid": "da4f731b-bf5a-4edf-9fcb-e5d3902a8940",
+              "__version": 2,
+              "__Prefab": "prefab/v_physgun.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "b6b3c266-7902-4d42-8df2-6a42be220f39"
+                    }
+                  }
+                ],
+                "PropertyOverrides": [],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "03a563ac-cc65-479a-8cc2-9295fe1cd7e5": "da4f731b-bf5a-4edf-9fcb-e5d3902a8940"
+              }
+            },
+            {
+              "__guid": "d74d66a6-0d6f-4fdf-b935-314bd646bfd6",
+              "__version": 2,
+              "__Prefab": "prefab/v_m4a1fp.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "2e4fe4ba-557c-46f6-8301-8b2f393a1fff"
+                    },
+                    "Property": "Name",
+                    "Value": "m4a1 Viewmodel"
+                  },
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "2e4fe4ba-557c-46f6-8301-8b2f393a1fff"
+                    },
+                    "Property": "Rotation",
+                    "Value": "0.0694822222,-0.0711528659,-0.695193946,-0.711909354"
+                  },
+                  {
+                    "Target": {
+                      "Type": "Component",
+                      "IdValue": "5d268e50-8839-4bcb-832f-4e5daa75d57d"
+                    },
+                    "Property": "__enabled",
+                    "Value": false
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "2e4fe4ba-557c-46f6-8301-8b2f393a1fff": "d74d66a6-0d6f-4fdf-b935-314bd646bfd6",
+                "5d268e50-8839-4bcb-832f-4e5daa75d57d": "138c3a3a-e3a1-4959-a770-15fe9c88b0d9"
+              }
+            }
+          ]
+        },
+        {
+          "__guid": "b65cced4-fd78-4d07-914f-b19add467f30",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "World model",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": [
+            {
+              "__guid": "c63f9e9e-f3aa-430e-9e6f-adbfc354cdb1",
+              "__version": 2,
+              "__Prefab": "prefab/w_m4a1fp.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "dd02dc80-e194-491d-bc0d-02ada67224a4"
+                    }
+                  },
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "0d2fcfc9-4e44-49a7-be8a-edd65b836453"
+                    }
+                  }
+                ],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "b06e05ce-1658-4621-a15a-3b671e3dc951"
+                    },
+                    "Property": "Name",
+                    "Value": "m4a1 World Model"
+                  },
+                  {
+                    "Target": {
+                      "Type": "Component",
+                      "IdValue": "616b30c7-c5cc-4a98-9722-a54dfe398f98"
+                    },
+                    "Property": "__enabled",
+                    "Value": false
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "b06e05ce-1658-4621-a15a-3b671e3dc951": "c63f9e9e-f3aa-430e-9e6f-adbfc354cdb1",
+                "616b30c7-c5cc-4a98-9722-a54dfe398f98": "9445319e-aa02-44cd-97f7-e8056c20bd6a",
+                "dd02dc80-e194-491d-bc0d-02ada67224a4": "69f829c3-644e-4fc1-b9e2-36c28e3f9f07",
+                "0d2fcfc9-4e44-49a7-be8a-edd65b836453": "83e01a30-1912-4cd2-8599-a6b813df2498"
+              }
+            },
+            {
+              "__guid": "9c5917c2-be02-4b0f-9104-c63a78292781",
+              "__version": 2,
+              "__Prefab": "prefab/w_physgun.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "7565881c-a9a4-46c8-ac94-68565463e089"
+                    }
+                  },
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "a78b84e0-1e0e-4a54-bd66-5a24c9361c00"
+                    }
+                  },
+                  {
+                    "Id": {
+                      "Type": "Component",
+                      "IdValue": "d53b80c2-ade6-4193-82c2-f2094da59957"
+                    }
+                  }
+                ],
+                "PropertyOverrides": [],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "ce7d920b-49d8-4789-a875-47a7b0fc724e": "9c5917c2-be02-4b0f-9104-c63a78292781",
+                "7565881c-a9a4-46c8-ac94-68565463e089": "ed546b86-1290-49a8-b5b2-6890592e1f9e",
+                "a78b84e0-1e0e-4a54-bd66-5a24c9361c00": "817b469a-06bd-49a5-b8f6-6e88d93760c0",
+                "d53b80c2-ade6-4193-82c2-f2094da59957": "e8453c73-aa73-42ad-b91d-003eb3db5b12"
+              }
+            }
+          ]
         }
       ]
     },
@@ -6066,8 +6259,279 @@
             }
           ],
           "Children": []
+        },
+        {
+          "__guid": "25e5212e-d865-44f3-b27b-05c91481d2af",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "Test Rifle Pickup",
+          "Position": "-280,1100,50",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.25,0.25,0.25",
+          "Tags": "",
+          "Enabled": false,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "WeaponPickup",
+              "__guid": "38105ab7-1756-41d0-bfca-66a918c5dd78",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimatePickup": true,
+              "BobHeight": 8,
+              "BobSpeed": 2,
+              "DisableAfterPickup": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PickupDistance": 120,
+              "PickupInput": "use",
+              "PickupSound": "sounds/error.sound",
+              "Player": {
+                "_type": "gameobject",
+                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
+              },
+              "PromptTextSize": 24,
+              "RotationSpeed": 90,
+              "WeaponManager": {
+                "_type": "component",
+                "component_id": "4ed6c3df-9c1e-4301-9b01-d8dd3622d9e6",
+                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
+                "component_type": "WeaponManager"
+              },
+              "WeaponToGive": "weapons/test_rifle.weapon"
+            },
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3fa94e73-47ee-446c-a97b-cea36c9404e5",
+              "__enabled": false,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": null,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "d5a66d7b-5b4a-4edf-91f8-ce09b9a5192e",
+          "__version": 2,
+          "__Prefab": "prefab/w_m4a1fp.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "87db4f19-f8f5-46da-beba-dfb7eab9fdbd"
+                },
+                "Parent": {
+                  "Type": "GameObject",
+                  "IdValue": "b06e05ce-1658-4621-a15a-3b671e3dc951"
+                },
+                "PreviousElement": {
+                  "Type": "Component",
+                  "IdValue": "0d2fcfc9-4e44-49a7-be8a-edd65b836453"
+                },
+                "ContainerProperty": "Components",
+                "IsContainerArray": true,
+                "Data": {
+                  "__type": "WeaponPickup",
+                  "__guid": "87db4f19-f8f5-46da-beba-dfb7eab9fdbd",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "AnimatePickup": true,
+                  "BobHeight": 8,
+                  "BobSpeed": 2,
+                  "DisableAfterPickup": true,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "PickupDistance": 120,
+                  "PickupInput": "use",
+                  "PickupSound": null,
+                  "Player": {
+                    "_type": "gameobject",
+                    "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
+                  },
+                  "PromptTextSize": 24,
+                  "RotationSpeed": 90,
+                  "WeaponManager": {
+                    "_type": "component",
+                    "component_id": "4ed6c3df-9c1e-4301-9b01-d8dd3622d9e6",
+                    "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
+                    "component_type": "WeaponManager"
+                  },
+                  "WeaponToGive": "weapons/test_rifle.weapon"
+                }
+              }
+            ],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b06e05ce-1658-4621-a15a-3b671e3dc951"
+                },
+                "Property": "Name",
+                "Value": "Test Rifle Pickup"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "b06e05ce-1658-4621-a15a-3b671e3dc951"
+                },
+                "Property": "Position",
+                "Value": "-280,1100,50"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "b06e05ce-1658-4621-a15a-3b671e3dc951": "d5a66d7b-5b4a-4edf-91f8-ce09b9a5192e",
+            "616b30c7-c5cc-4a98-9722-a54dfe398f98": "70752b1d-1525-4568-96c3-91e66645425e",
+            "dd02dc80-e194-491d-bc0d-02ada67224a4": "fabee157-8193-4ca4-8022-af9b0b6db065",
+            "0d2fcfc9-4e44-49a7-be8a-edd65b836453": "0cb27758-eb13-47cc-9006-87535f5c2b64"
+          }
         }
       ]
+    },
+    {
+      "__guid": "fb175034-8203-45fc-a0cb-f0cb46033c6f",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "WorldModel_RayGun",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": false,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "ea4ce3d4-eca1-494c-9d6c-b1a10c93dce1",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/weapons/sbox_physgun/w_physgun.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "5907cbe1-7def-443b-94b5-80bb1a7acdbc",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "ViewModel_Raygun",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": false,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "f1d189e0-97b1-4707-96d4-f9eb083898e7",
+          "__enabled": true,
+          "Flags": 0,
+          "BodyGroups": 18446744073709551615,
+          "CreateAttachments": false,
+          "LodOverride": null,
+          "MaterialGroup": null,
+          "MaterialOverride": null,
+          "Materials": null,
+          "Model": "models/weapons/sbox_physgun/v_physgun.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "RenderOptions": {
+            "GameLayer": true,
+            "OverlayLayer": false,
+            "BloomLayer": false,
+            "AfterUILayer": false
+          },
+          "RenderType": "On",
+          "Tint": "1,1,1,1"
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "98e1e415-9ad0-41b3-b341-7fa4da754b75",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Viewmodel Root",
+      "Position": "58.016243,-31.308876,-118.505745",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": []
     }
   ],
   "SceneProperties": {
@@ -6090,24 +6554,22 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
+      },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
-      },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
-        }
-      },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
       }
     }
   },
   "ResourceVersion": 3,
   "Title": null,
   "Description": null,
-  "__references": [],
+  "__references": [
+    "facepunch.v_physgun#205816",
+    "facepunch.w_physgun#154012"
+  ],
   "__version": 3
 }

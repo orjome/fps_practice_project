@@ -21,6 +21,20 @@
   "ProjectileUsesGravity": false,
   "ProjectileGravityStrength": 800,
   "ProjectileSpawnForwardOffset": 40,
+  "ViewModelPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefab/v_m4a1fp.prefab"
+  },
+  "ViewModelPositionOffset": "5,-7,0",
+  "ViewModelRotationOffset": "0,0,0",
+  "ViewModelScale": 1,
+  "WorldModelPrefab": {
+    "_type": "gameobject",
+    "prefab": "prefab/w_m4a1fp.prefab"
+  },
+  "WorldModelPositionOffset": "0,0,0",
+  "WorldModelRotationOffset": "0,0,0",
+  "WorldModelScale": 1,
   "FireSound": "sounds/m4a1_shooting.sound",
   "EmptySound": "sounds/kenney/ui/ui.button.deny.sound",
   "ReloadStartSound": "sounds/m4a1_reload_out.sound",
