@@ -104,7 +104,7 @@ public partial class WeaponData : GameResource
 	public GameObject ViewModelPrefab { get; set; }
 
 	[Property, Group( "Visuals - ViewModel" )]
-	public Vector3 ViewModelPositionOffset { get; set; } = new Vector3( 45f, 14f, -18f );
+	public Vector3 ViewModelPositionOffset { get; set; } = new Vector3( 0f, 0f, 0f );
 
 	[Property, Group( "Visuals - ViewModel" )]
 	public Angles ViewModelRotationOffset { get; set; } = new Angles( 0f, 0f, 0f );

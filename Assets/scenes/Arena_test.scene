@@ -5656,8 +5656,7 @@
           "Slot2Input": "weapon_slot_2",
           "Slot3Input": "weapon_slot_3",
           "StartingWeapons": [
-            "weapons/plasma_gun.weapon",
-            "weapons/test_rifle.weapon"
+            "weapons/test_smg.weapon"
           ],
           "ViewKick": {
             "_type": "component",
@@ -5982,6 +5981,38 @@
                 "2e4fe4ba-557c-46f6-8301-8b2f393a1fff": "d74d66a6-0d6f-4fdf-b935-314bd646bfd6",
                 "5d268e50-8839-4bcb-832f-4e5daa75d57d": "138c3a3a-e3a1-4959-a770-15fe9c88b0d9"
               }
+            },
+            {
+              "__guid": "5d0b7e8c-6210-4772-af88-eba985b092e0",
+              "__version": 2,
+              "__Prefab": "prefab/v_mp5.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "a1c15317-606c-4fbe-ae95-382d849b0336"
+                    },
+                    "Property": "Position",
+                    "Value": "0,0,0.0503787994"
+                  },
+                  {
+                    "Target": {
+                      "Type": "Component",
+                      "IdValue": "fe2d6f53-b1fa-4db2-a5a6-1d87decbe0b3"
+                    },
+                    "Property": "__enabled",
+                    "Value": false
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "a1c15317-606c-4fbe-ae95-382d849b0336": "5d0b7e8c-6210-4772-af88-eba985b092e0",
+                "fe2d6f53-b1fa-4db2-a5a6-1d87decbe0b3": "107d2fde-b125-4ea0-84db-15a9f3ede6fe"
+              }
             }
           ]
         },
@@ -6083,6 +6114,32 @@
                 "7565881c-a9a4-46c8-ac94-68565463e089": "ed546b86-1290-49a8-b5b2-6890592e1f9e",
                 "a78b84e0-1e0e-4a54-bd66-5a24c9361c00": "817b469a-06bd-49a5-b8f6-6e88d93760c0",
                 "d53b80c2-ade6-4193-82c2-f2094da59957": "e8453c73-aa73-42ad-b91d-003eb3db5b12"
+              }
+            },
+            {
+              "__guid": "aeaad325-8778-4885-b5da-f89b587e9898",
+              "__version": 2,
+              "__Prefab": "prefab/w_mp5.prefab",
+              "__PrefabInstancePatch": {
+                "AddedObjects": [],
+                "RemovedObjects": [],
+                "PropertyOverrides": [
+                  {
+                    "Target": {
+                      "Type": "GameObject",
+                      "IdValue": "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed"
+                    },
+                    "Property": "Position",
+                    "Value": "-347.174927,-868.339722,0.0363788605"
+                  }
+                ],
+                "MovedObjects": []
+              },
+              "__PrefabIdToInstanceId": {
+                "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed": "aeaad325-8778-4885-b5da-f89b587e9898",
+                "f9ace547-6091-4211-ae7a-4649aa4f2849": "241b78d0-d613-49a9-b2c5-bb7180bda19f",
+                "1499d916-737b-494e-90ee-d4b9d5a74869": "8cb55eba-334d-468b-9908-8a3bfa476a43",
+                "d735cceb-0d79-49c7-afb1-afc4460b901c": "0471ae6e-ff33-47c0-bad2-3402cbad5159"
               }
             }
           ]
