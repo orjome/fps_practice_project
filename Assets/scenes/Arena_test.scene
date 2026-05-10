@@ -2251,7 +2251,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "Weapon Pickups",
-      "Position": "1,0,0",
+      "Position": "0,0,0",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "",
@@ -2364,18 +2364,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
       },
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
+        }
       }
     }
   },

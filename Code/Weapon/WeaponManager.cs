@@ -42,7 +42,7 @@ public sealed class WeaponManager : Component
 
 	private int currentSlotIndex = -1;
 	private bool isReloading;
-	private float nextFireTime;
+	private TimeSince timeSinceFired;
 	private float currentSpread;
 	private int reloadVersion;
 
@@ -260,7 +260,6 @@ public sealed class WeaponManager : Component
 		reloadVersion++;
 		isReloading = false;
 		currentSpread = 0f;
-		nextFireTime = 0f;
 
 		currentSlotIndex = slotIndex;
 		CurrentWeapon = inventorySlots[currentSlotIndex].Weapon;
@@ -293,22 +292,22 @@ public sealed class WeaponManager : Component
 		if ( isReloading )
 			return;
 
-		if ( Time.Now < nextFireTime )
+		// Replace with:
+		float secondsBetweenShots = 1f / MathF.Max( CurrentWeapon.FireRate, 0.01f );
+		if ( timeSinceFired < secondsBetweenShots )
 			return;
 
 		if ( slot.CurrentAmmo <= 0 )
 		{
 			Log.Info( "Click! Magazine empty." );
 			PlaySoundIfValid( CurrentWeapon.EmptySound );
-			nextFireTime = Time.Now + 0.2f;
+			timeSinceFired = 0;
 			StartReload();
 			return;
 		}
 
 		slot.CurrentAmmo--;
-
-		float secondsBetweenShots = 1f / MathF.Max( CurrentWeapon.FireRate, 0.01f );
-		nextFireTime = Time.Now + secondsBetweenShots;
+		timeSinceFired = 0;
 
 		float spreadForThisShot = currentSpread;
 

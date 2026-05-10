@@ -25,7 +25,8 @@ public sealed class WeaponSlotsHud : Component
 	{
 		var hud = Scene.Camera.Hud;
 
-		int maxSlots = 3;
+		int maxSlots = WeaponManager.MaxWeaponSlots;
+
 		float totalWidth = maxSlots * SlotWidth + (maxSlots - 1) * SlotGap;
 
 		float startX = (Screen.Width - totalWidth) * 0.5f;

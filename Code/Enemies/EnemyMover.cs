@@ -82,8 +82,12 @@ public sealed class EnemyMover : Component
 		Log.Info( $"{GameObject.Name} attacked {Target.Name} for {AttackDamage} damage." );
 	}
 
+	// Add this null check at the top of the method:
 	private IGameDamageable FindDamageableOnObject( GameObject targetObject )
 	{
+		if ( targetObject is null )
+			return null;
+
 		foreach ( var component in targetObject.Components.GetAll() )
 		{
 			if ( component is IGameDamageable damageable )
