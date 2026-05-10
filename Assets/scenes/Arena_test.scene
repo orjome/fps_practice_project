@@ -5013,7 +5013,7 @@
       "__version": 2,
       "Flags": 0,
       "Name": "HUD",
-      "Position": "-700.910828,-252.135834,664.256897",
+      "Position": "0,0,500",
       "Rotation": "0,0,0,1",
       "Scale": "0.5,0.5,1",
       "Tags": "",
@@ -5655,9 +5655,7 @@
           "Slot1Input": "weapon_slot_1",
           "Slot2Input": "weapon_slot_2",
           "Slot3Input": "weapon_slot_3",
-          "StartingWeapons": [
-            "weapons/test_smg.weapon"
-          ],
+          "StartingWeapons": [],
           "ViewKick": {
             "_type": "component",
             "component_id": "38e885ec-daf6-4134-bf13-79bbe8af78c0",
@@ -5907,7 +5905,7 @@
           "__guid": "1e83f7c2-3d9d-4e5d-aa74-b2c2d3be90cf",
           "__version": 2,
           "Flags": 0,
-          "Name": "View Model",
+          "Name": "Weapon VModel",
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
@@ -6020,7 +6018,7 @@
           "__guid": "b65cced4-fd78-4d07-914f-b19add467f30",
           "__version": 2,
           "Flags": 0,
-          "Name": "World model",
+          "Name": "Weapon WModel",
           "Position": "0,0,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
@@ -6131,6 +6129,14 @@
                     },
                     "Property": "Position",
                     "Value": "-347.174927,-868.339722,0.0363788605"
+                  },
+                  {
+                    "Target": {
+                      "Type": "Component",
+                      "IdValue": "f9ace547-6091-4211-ae7a-4649aa4f2849"
+                    },
+                    "Property": "__enabled",
+                    "Value": false
                   }
                 ],
                 "MovedObjects": []
@@ -6320,84 +6326,6 @@
           "Children": []
         },
         {
-          "__guid": "25e5212e-d865-44f3-b27b-05c91481d2af",
-          "__version": 2,
-          "Flags": 0,
-          "Name": "Test Rifle Pickup",
-          "Position": "-280,1100,50",
-          "Rotation": "0,0,0,1",
-          "Scale": "0.25,0.25,0.25",
-          "Tags": "",
-          "Enabled": false,
-          "NetworkMode": 2,
-          "NetworkFlags": 0,
-          "NetworkOrphaned": 0,
-          "NetworkTransmit": true,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "WeaponPickup",
-              "__guid": "38105ab7-1756-41d0-bfca-66a918c5dd78",
-              "__enabled": true,
-              "Flags": 0,
-              "AnimatePickup": true,
-              "BobHeight": 8,
-              "BobSpeed": 2,
-              "DisableAfterPickup": true,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "PickupDistance": 120,
-              "PickupInput": "use",
-              "PickupSound": "sounds/error.sound",
-              "Player": {
-                "_type": "gameobject",
-                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
-              },
-              "PromptTextSize": 24,
-              "RotationSpeed": 90,
-              "WeaponManager": {
-                "_type": "component",
-                "component_id": "4ed6c3df-9c1e-4301-9b01-d8dd3622d9e6",
-                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
-                "component_type": "WeaponManager"
-              },
-              "WeaponToGive": "weapons/test_rifle.weapon"
-            },
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "3fa94e73-47ee-446c-a97b-cea36c9404e5",
-              "__enabled": false,
-              "Flags": 0,
-              "BodyGroups": 18446744073709551615,
-              "CreateAttachments": false,
-              "LodOverride": null,
-              "MaterialGroup": null,
-              "MaterialOverride": null,
-              "Materials": null,
-              "Model": null,
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "RenderOptions": {
-                "GameLayer": true,
-                "OverlayLayer": false,
-                "BloomLayer": false,
-                "AfterUILayer": false
-              },
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "d5a66d7b-5b4a-4edf-91f8-ce09b9a5192e",
           "__version": 2,
           "__Prefab": "prefab/w_m4a1fp.prefab",
@@ -6435,7 +6363,7 @@
                   "OnComponentUpdate": null,
                   "PickupDistance": 120,
                   "PickupInput": "use",
-                  "PickupSound": null,
+                  "PickupSound": "sounds/error.sound",
                   "Player": {
                     "_type": "gameobject",
                     "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
@@ -6479,118 +6407,99 @@
             "dd02dc80-e194-491d-bc0d-02ada67224a4": "fabee157-8193-4ca4-8022-af9b0b6db065",
             "0d2fcfc9-4e44-49a7-be8a-edd65b836453": "0cb27758-eb13-47cc-9006-87535f5c2b64"
           }
+        },
+        {
+          "__guid": "a93b9e43-a8ff-40b9-a0e1-39c887ee5171",
+          "__version": 2,
+          "__Prefab": "prefab/w_mp5.prefab",
+          "__PrefabInstancePatch": {
+            "AddedObjects": [
+              {
+                "Id": {
+                  "Type": "Component",
+                  "IdValue": "f2a8759d-6eb7-4260-aadb-4c7eb75dc9b0"
+                },
+                "Parent": {
+                  "Type": "GameObject",
+                  "IdValue": "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed"
+                },
+                "PreviousElement": {
+                  "Type": "Component",
+                  "IdValue": "d735cceb-0d79-49c7-afb1-afc4460b901c"
+                },
+                "ContainerProperty": "Components",
+                "IsContainerArray": true,
+                "Data": {
+                  "__type": "WeaponPickup",
+                  "__guid": "f2a8759d-6eb7-4260-aadb-4c7eb75dc9b0",
+                  "__enabled": true,
+                  "Flags": 0,
+                  "AnimatePickup": true,
+                  "BobHeight": 8,
+                  "BobSpeed": 2,
+                  "DisableAfterPickup": true,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "PickupDistance": 120,
+                  "PickupInput": "use",
+                  "PickupSound": "sounds/error.sound",
+                  "Player": {
+                    "_type": "gameobject",
+                    "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
+                  },
+                  "PromptTextSize": 24,
+                  "RotationSpeed": 90,
+                  "WeaponManager": {
+                    "_type": "component",
+                    "component_id": "4ed6c3df-9c1e-4301-9b01-d8dd3622d9e6",
+                    "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
+                    "component_type": "WeaponManager"
+                  },
+                  "WeaponToGive": "weapons/test_smg.weapon"
+                }
+              }
+            ],
+            "RemovedObjects": [],
+            "PropertyOverrides": [
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed"
+                },
+                "Property": "Name",
+                "Value": "SMG Pickup"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed"
+                },
+                "Property": "Position",
+                "Value": "60,0,25"
+              },
+              {
+                "Target": {
+                  "Type": "GameObject",
+                  "IdValue": "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed"
+                },
+                "Property": "Rotation",
+                "Value": "0,0,0.707106769,0.707106769"
+              }
+            ],
+            "MovedObjects": []
+          },
+          "__PrefabIdToInstanceId": {
+            "f8f96168-3c6c-4fbd-9ed9-96414ccdd2ed": "a93b9e43-a8ff-40b9-a0e1-39c887ee5171",
+            "f9ace547-6091-4211-ae7a-4649aa4f2849": "6ebc3831-ab2f-4c66-acc0-f9f325e65683",
+            "1499d916-737b-494e-90ee-d4b9d5a74869": "8c43e17d-d27b-4067-bfa1-a0cc9bdb0ed6",
+            "d735cceb-0d79-49c7-afb1-afc4460b901c": "11e864b4-b7f5-47a5-aa61-dc4d81918215"
+          }
         }
       ]
-    },
-    {
-      "__guid": "fb175034-8203-45fc-a0cb-f0cb46033c6f",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "WorldModel_RayGun",
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": false,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "ea4ce3d4-eca1-494c-9d6c-b1a10c93dce1",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/weapons/sbox_physgun/w_physgun.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "5907cbe1-7def-443b-94b5-80bb1a7acdbc",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "ViewModel_Raygun",
-      "Position": "0,0,0",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": false,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f1d189e0-97b1-4707-96d4-f9eb083898e7",
-          "__enabled": true,
-          "Flags": 0,
-          "BodyGroups": 18446744073709551615,
-          "CreateAttachments": false,
-          "LodOverride": null,
-          "MaterialGroup": null,
-          "MaterialOverride": null,
-          "Materials": null,
-          "Model": "models/weapons/sbox_physgun/v_physgun.vmdl",
-          "OnComponentDestroy": null,
-          "OnComponentDisabled": null,
-          "OnComponentEnabled": null,
-          "OnComponentFixedUpdate": null,
-          "OnComponentStart": null,
-          "OnComponentUpdate": null,
-          "RenderOptions": {
-            "GameLayer": true,
-            "OverlayLayer": false,
-            "BloomLayer": false,
-            "AfterUILayer": false
-          },
-          "RenderType": "On",
-          "Tint": "1,1,1,1"
-        }
-      ],
-      "Children": []
-    },
-    {
-      "__guid": "98e1e415-9ad0-41b3-b341-7fa4da754b75",
-      "__version": 2,
-      "Flags": 0,
-      "Name": "Viewmodel Root",
-      "Position": "58.016243,-31.308876,-118.505745",
-      "Rotation": "0,0,0,1",
-      "Scale": "1,1,1",
-      "Tags": "",
-      "Enabled": true,
-      "NetworkMode": 2,
-      "NetworkFlags": 0,
-      "NetworkOrphaned": 0,
-      "NetworkTransmit": true,
-      "OwnerTransfer": 1,
-      "Components": [],
-      "Children": []
     }
   ],
   "SceneProperties": {
@@ -6631,9 +6540,6 @@
   "ResourceVersion": 3,
   "Title": null,
   "Description": null,
-  "__references": [
-    "facepunch.v_physgun#205816",
-    "facepunch.w_physgun#154012"
-  ],
+  "__references": [],
   "__version": 3
 }
