@@ -568,6 +568,6 @@ public sealed class WeaponManager : Component
 		if ( sound is null )
 			return;
 
-		GameObject.PlaySound( sound, Vector3.Zero );
+		GameObject.PlaySound( sound );
 	}
 }

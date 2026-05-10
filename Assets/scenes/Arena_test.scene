@@ -1215,9 +1215,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Pillar",
-          "Position": "1950.85632,2324.1665,90.0000916",
+          "Position": "1950.85632,2324.1665,80",
           "Rotation": "0,0.707106769,0,0.707106769",
-          "Scale": "5,1.5,1",
+          "Scale": "5,1,0.5",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -1287,9 +1287,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Pillar",
-          "Position": "900,450,90.0000534",
+          "Position": "900,450,80",
           "Rotation": "0,0.707106769,0,0.707106769",
-          "Scale": "5,1.5,1",
+          "Scale": "5,1,0.5",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -1359,9 +1359,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Half Wall",
-          "Position": "1355,200,58",
+          "Position": "1355,200,55",
           "Rotation": "0,0,0,1",
-          "Scale": "1,10,1.29999995",
+          "Scale": "1,10,1.20000005",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -1431,9 +1431,9 @@
           "__version": 2,
           "Flags": 0,
           "Name": "Half Wall",
-          "Position": "1130,-75,58.0000153",
+          "Position": "1130,-75,55",
           "Rotation": "0,0,0.707106769,0.707106769",
-          "Scale": "1,10,1.29999995",
+          "Scale": "1,10,1.20000005",
           "Tags": "",
           "Enabled": true,
           "NetworkMode": 2,
@@ -2245,6 +2245,103 @@
           "Children": []
         }
       ]
+    },
+    {
+      "__guid": "f7a96bec-b1f0-4e9a-a1f7-41fa225d2238",
+      "__version": 2,
+      "Flags": 0,
+      "Name": "Weapon Pickups",
+      "Position": "1,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkFlags": 0,
+      "NetworkOrphaned": 0,
+      "NetworkTransmit": true,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "8cab8eeb-80df-4aea-8c0f-33ece0f94ec0",
+          "__version": 2,
+          "Flags": 0,
+          "Name": "SMG Pickup",
+          "Position": "-239.62851,1097.34814,62.4093323",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.25,0.25,0.25",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkFlags": 0,
+          "NetworkOrphaned": 0,
+          "NetworkTransmit": true,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "e8cc946f-fc91-43e8-a2a5-06f26b3b0834",
+              "__enabled": true,
+              "Flags": 0,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "LodOverride": null,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Materials": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "0,1,0.68333,1"
+            },
+            {
+              "__type": "WeaponPickup",
+              "__guid": "3c8936ef-cf36-4c7b-b076-72178d61cfb2",
+              "__enabled": true,
+              "Flags": 0,
+              "AnimatePickup": true,
+              "BobHeight": 8,
+              "BobSpeed": 2,
+              "DisableAfterPickup": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PickupDistance": 120,
+              "PickupInput": "use",
+              "PickupSound": "sounds/error.sound",
+              "Player": {
+                "_type": "gameobject",
+                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f"
+              },
+              "PromptTextSize": 24,
+              "RotationSpeed": 90,
+              "WeaponManager": {
+                "_type": "component",
+                "component_id": "4ed6c3df-9c1e-4301-9b01-d8dd3622d9e6",
+                "go": "929a0782-cba6-4ec0-b027-0a22f13b4b5f",
+                "component_type": "WeaponManager"
+              },
+              "WeaponToGive": "weapons/test_smg.weapon"
+            }
+          ],
+          "Children": []
+        }
+      ]
     }
   ],
   "SceneProperties": {
@@ -2267,18 +2364,18 @@
       "CustomBounds": false
     },
     "GameObjectSystems": {
-      "Sandbox.MovieMaker.MovieRecorderSystem": {
-        "DisableClientRecording": false
+      "Sandbox.Clutter.ClutterGridSystem": {
+        "Storage": {
+          "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
+        }
       },
       "Sandbox.SelectionSetsSystem": {
         "Data": {
           "SelectionSets": []
         }
       },
-      "Sandbox.Clutter.ClutterGridSystem": {
-        "Storage": {
-          "$blob": "96df93ea-597a-48ca-be5a-c58b57bd1621"
-        }
+      "Sandbox.MovieMaker.MovieRecorderSystem": {
+        "DisableClientRecording": false
       }
     }
   },
