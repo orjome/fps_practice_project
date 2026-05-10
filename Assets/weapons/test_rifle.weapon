@@ -25,7 +25,7 @@
     "_type": "gameobject",
     "prefab": "prefab/v_m4a1fp.prefab"
   },
-  "ViewModelPositionOffset": "5,-7,0",
+  "ViewModelPositionOffset": "5,-3.5,0",
   "ViewModelRotationOffset": "0,0,0",
   "ViewModelScale": 1,
   "WorldModelPrefab": {

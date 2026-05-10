@@ -5656,7 +5656,8 @@
           "Slot2Input": "weapon_slot_2",
           "Slot3Input": "weapon_slot_3",
           "StartingWeapons": [
-            "weapons/plasma_gun.weapon"
+            "weapons/plasma_gun.weapon",
+            "weapons/test_rifle.weapon"
           ],
           "ViewKick": {
             "_type": "component",

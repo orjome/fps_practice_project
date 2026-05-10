@@ -10,8 +10,8 @@
     "DeleteAt": 0
   },
   "Window.SboxSceneEditor.Dock": {
-    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAACfcAAAUrAAAAAAAAAAAAAAn3AAAFKwAAAAAAAAAACgAAAAAAAAAAAAAACfcAAAUr\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/arena_test.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/test.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefab/w_m4a1fp.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefab/v_m4a1fp.prefab\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:3,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAADuAAAAh0A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAG/gAAAZgA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABmwAACjQA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
-    "Timeout": 1781029751,
+    "Value": "{\u0022floatingWindows\u0022:[],\u0022mainWrapper\u0022:{\u0022geometry\u0022:\u0022AdnQywADAAAAAAAAAAAAAAAACfcAAAUrAAAAAAAAAAAAAAn3AAAFKwAAAAAAAAAACgAAAAAAAAAAAAAACfcAAAUr\u0022,\u0022splitter\u0022:{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneTreeWidget\u0022,\u0022name\u0022:\u0022Hierarchy\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022PanelInspectorWidget\u0022,\u0022name\u0022:\u0022UI Panels\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022items\u0022:[{\u0022items\u0022:[{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/arena_test.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:scenes/test.scene\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefab/v_physgun.prefab\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022SceneDock\u0022,\u0022name\u0022:\u0022SceneDock:prefab/w_physgun.prefab\u0022}],\u0022type\u0022:\u0022area\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MainAssetBrowser\u0022,\u0022name\u0022:\u0022Asset Browser\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022MixerDock\u0022,\u0022name\u0022:\u0022Mixer\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022LibraryManagerDock\u0022,\u0022name\u0022:\u0022Library Manager\u0022},{\u0022data\u0022:null,\u0022managedType\u0022:\u0022ConsoleWidget\u0022,\u0022name\u0022:\u0022Console\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAADuAAAAh0A/////wEAAAACAA==\u0022,\u0022type\u0022:\u0022splitter\u0022},{\u0022currentIndex\u0022:0,\u0022objects\u0022:[{\u0022data\u0022:null,\u0022managedType\u0022:\u0022Inspector\u0022,\u0022name\u0022:\u0022Inspector\u0022}],\u0022type\u0022:\u0022area\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAAG/gAAAZgA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}],\u0022state\u0022:\u0022AAAA/wAAAAEAAAACAAABmwAACjQA/////wEAAAABAA==\u0022,\u0022type\u0022:\u0022splitter\u0022}},\u0022toolWindowManagerStateFormat\u0022:1}",
+    "Timeout": 1781034572,
     "DeleteAt": 0
   },
   "scenes/minimal.scene.Viewport0": {
@@ -21,12 +21,12 @@
   },
   "SceneView.Viewport0.Settings": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-236.066116,987.995483,142.491364\u0022,\u0022CameraRotation\u0022:\u0022-0.274275929,0.239453912,0.701602101,0.612526834\u0022,\u0022View\u0022:0,\u0022RenderMode\u0022:0,\u0022WireframeMode\u0022:false,\u0022EnablePostProcessing\u0022:true,\u0022EnablePrefabLighting\u0022:true,\u0022ShowSkyIn2D\u0022:true,\u0022ShowGrid\u0022:true,\u0022GridOpacity\u0022:0.2,\u0022GridAxis\u0022:0,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034360,
+    "Timeout": 1781034571,
     "DeleteAt": 0
   },
   "scenes/test.scene.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-1125.80127,-528.613037,660.17157\u0022,\u0022CameraRotation\u0022:\u0022-0.0495138094,0.168236509,0.277961224,0.944448173\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034360,
+    "Timeout": 1781034571,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Model.History": {
@@ -71,7 +71,7 @@
   },
   ".Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-236.066116,987.995483,142.491364\u0022,\u0022CameraRotation\u0022:\u0022-0.274275929,0.239453912,0.701602101,0.612526834\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034318,
+    "Timeout": 1781034567,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Model.HistoryIdx": {
@@ -125,8 +125,8 @@
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Weapon Data.History": {
-    "Value": "[\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\weapons\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\assets\\\\weapons\u0022]",
-    "Timeout": 1781034297,
+    "Value": "[\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\weapons\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\assets\\\\weapons\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\u0022,\u0022c:\\\\users\\\\littl\\\\documents\\\\s\\u0026box projects\\\\fps_practice_project\\\\Assets\\\\weapons\u0022]",
+    "Timeout": 1781034439,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Prefab.History": {
@@ -166,12 +166,12 @@
   },
   "SceneView.Layout": {
     "Value": "{\u0022Layout\u0022:0,\u0022SplitterState\u0022:[]}",
-    "Timeout": 1781033883,
+    "Timeout": 1781034572,
     "DeleteAt": 0
   },
   "gizmo.settings": {
     "Value": "{\u0022EditMode\u0022:\u0022position\u0022,\u0022Selection\u0022:true,\u0022ViewMode\u0022:\u00223d\u0022,\u0022GizmosEnabled\u0022:true,\u0022GizmoScale\u0022:1,\u0022GridSpacing\u0022:32,\u0022SnapToGrid\u0022:false,\u0022SnapToAngles\u0022:true,\u0022AngleSpacing\u0022:15,\u0022GlobalSpace\u0022:false,\u0022DebugActionGraphs\u0022:false,\u0022DisabledGizmos\u0022:{}}",
-    "Timeout": 1781029745,
+    "Timeout": 1781034572,
     "DeleteAt": 0
   },
   "expand.3d45b89a-0f46-4a44-84d7-de2b9e51e8e0.XpHud": {
@@ -190,8 +190,8 @@
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Weapon Data.HistoryIdx": {
-    "Value": "4",
-    "Timeout": 1781034297,
+    "Value": "7",
+    "Timeout": 1781034439,
     "DeleteAt": 0
   },
   "expand.975a3759-3cb4-46cb-8101-19c9ea4e0a41.ModelRenderer": {
@@ -366,7 +366,7 @@
   },
   "scenes/arena_test.scene.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-236.066116,987.995483,142.491364\u0022,\u0022CameraRotation\u0022:\u0022-0.274275929,0.239453912,0.701602101,0.612526834\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034360,
+    "Timeout": 1781034571,
     "DeleteAt": 0
   },
   "LocalAssetBrowser.Surface Description.History": {
@@ -391,12 +391,12 @@
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.MoveModeWalk": {
     "Value": "false",
-    "Timeout": 1781034170,
+    "Timeout": 1781034562,
     "DeleteAt": 0
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.PlayerController": {
     "Value": "false",
-    "Timeout": 1781034170,
+    "Timeout": 1781034562,
     "DeleteAt": 0
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.MoveModeSwim": {
@@ -416,7 +416,7 @@
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.Dresser": {
     "Value": "false",
-    "Timeout": 1781034170,
+    "Timeout": 1781034562,
     "DeleteAt": 0
   },
   "expand.dd5bd523-040c-4219-bbcc-4ee28c0e6265.SimpleCrosshair": {
@@ -646,12 +646,12 @@
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.PlayerHealth": {
     "Value": "false",
-    "Timeout": 1781034170,
+    "Timeout": 1781034565,
     "DeleteAt": 0
   },
   "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.WeaponViewKick": {
     "Value": "false",
-    "Timeout": 1781034170,
+    "Timeout": 1781034567,
     "DeleteAt": 0
   },
   "prefab/w_m4a1.mdl.prefab.Viewport0": {
@@ -776,7 +776,7 @@
   },
   "prefab/v_physgun.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-194.334015,-193.37352,280.35202\u0022,\u0022CameraRotation\u0022:\u0022-0.14644663,0.353553414,0.353553414,0.853553355\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034360,
+    "Timeout": 1781034571,
     "DeleteAt": 0
   },
   "expand.31c99985-f57b-4fe6-8822-83231bb4ab55.SkinnedModelRenderer": {
@@ -786,7 +786,7 @@
   },
   "prefab/w_physgun.prefab.Viewport0": {
     "Value": "{\u0022CameraPosition\u0022:\u0022-13.5832214,-11.3609371,23.619894\u0022,\u0022CameraRotation\u0022:\u0022-0.14644663,0.353553414,0.353553414,0.853553355\u0022,\u0022CameraOrthoHeight\u0022:1000}",
-    "Timeout": 1781034360,
+    "Timeout": 1781034571,
     "DeleteAt": 0
   },
   "expand.ce7d920b-49d8-4789-a875-47a7b0fc724e.ModelRenderer": {
@@ -812,6 +812,16 @@
   "expand.d5a66d7b-5b4a-4edf-91f8-ce09b9a5192e.Rigidbody": {
     "Value": "false",
     "Timeout": 1781034318,
+    "DeleteAt": 0
+  },
+  "expand.6b0f4c36-9592-487e-92ee-f2652ef47a18.SkinnedModelRenderer": {
+    "Value": "false",
+    "Timeout": 1781034542,
+    "DeleteAt": 0
+  },
+  "expand.929a0782-cba6-4ec0-b027-0a22f13b4b5f.WeaponManager": {
+    "Value": "false",
+    "Timeout": 1781034563,
     "DeleteAt": 0
   }
 }
