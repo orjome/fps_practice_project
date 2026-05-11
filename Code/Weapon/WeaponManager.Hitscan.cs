@@ -53,5 +53,8 @@ public sealed partial class WeaponManager : Component
 
 		var impact = CurrentWeapon.BulletImpactPrefab.Clone( position );
 		impact.WorldRotation = Rotation.LookAt( normal, Vector3.Up );
+
+		var particle = impact.Components.Get<ParticleEffect>( FindMode.EverythingInSelfAndDescendants );
+		particle?.Play();
 	}
 }

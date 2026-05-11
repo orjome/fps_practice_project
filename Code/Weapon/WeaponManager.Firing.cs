@@ -20,11 +20,7 @@ public sealed partial class WeaponManager : Component
 		{
 			Log.Info( "Click! Magazine empty." );
 			PlaySoundIfValid( CurrentWeapon.EmptySound );
-			PlaySoundIfValid( CurrentWeapon.FireSound );
-			SpawnMuzzleFlash();
-
 			nextFireTime = Time.Now + 0.2f;
-
 			StartReload();
 			return;
 		}
@@ -35,12 +31,13 @@ public sealed partial class WeaponManager : Component
 		nextFireTime = Time.Now + secondsBetweenShots;
 
 		float spreadForThisShot = isAiming
-	? currentSpread * CurrentWeapon.AimSpreadMultiplier
-	: currentSpread;
+			? currentSpread * CurrentWeapon.AimSpreadMultiplier
+			: currentSpread;
 
 		FireCurrentWeapon( spreadForThisShot );
 		ApplyWeaponFeel();
 		PlaySoundIfValid( CurrentWeapon.FireSound );
+		SpawnMuzzleFlash();
 		IncreaseSpread();
 
 		Log.Info( $"Fired {CurrentWeapon.DisplayName}. Ammo: {slot.CurrentAmmo}/{slot.ReserveAmmo}. Shot Spread: {CurrentWeapon.BaseSpread + spreadForThisShot:0.00}, Current Spread: {CurrentWeapon.BaseSpread + currentSpread:0.00}" );
@@ -56,4 +53,5 @@ public sealed partial class WeaponManager : Component
 
 		FireRaycast( spreadForThisShot );
 	}
+
 }

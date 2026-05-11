@@ -146,8 +146,10 @@ public sealed partial class WeaponManager : Component
 			CurrentWeapon.WorldModelScale
 		);
 	}
-		public void SpawnMuzzleFlash()
+	public void SpawnMuzzleFlash()
 	{
+		Log.Info( $"SpawnMuzzleFlash called. MuzzlePoint valid: {MuzzlePoint.IsValid()}, Prefab: {CurrentWeapon?.MuzzleFlashPrefab}" );
+
 		if ( CurrentWeapon?.MuzzleFlashPrefab is null )
 			return;
 
@@ -158,4 +160,3 @@ public sealed partial class WeaponManager : Component
 		flash.WorldRotation = MuzzlePoint.WorldRotation;
 	}
 }
-

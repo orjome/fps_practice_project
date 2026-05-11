@@ -48,7 +48,7 @@
   "ReloadCompleteSound": "sounds/m4a1_reload_in.sound",
   "MuzzleFlashPrefab": {
     "_type": "gameobject",
-    "prefab": "prefab/pistol_muzzleflash.prefab"
+    "prefab": "prefab/rifle_muzzleflash.prefab"
   },
   "BulletImpactPrefab": {
     "_type": "gameobject",
