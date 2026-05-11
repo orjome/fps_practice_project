@@ -16,6 +16,13 @@ public sealed partial class WeaponManager : Component
 			.Run();
 
 		DrawDebugBulletPath( start, end, trace );
+		if ( !trace.Hit )
+		{
+			Log.Info( "Shot missed." );
+			return;
+		}
+
+		SpawnBulletImpact( trace.HitPosition, trace.Normal );
 
 		if ( !trace.Hit )
 		{
@@ -37,5 +44,14 @@ public sealed partial class WeaponManager : Component
 		{
 			Log.Info( $"{trace.GameObject.Name} cannot take damage." );
 		}
+	}
+
+	private void SpawnBulletImpact( Vector3 position, Vector3 normal )
+	{
+		if ( CurrentWeapon?.BulletImpactPrefab is null )
+			return;
+
+		var impact = CurrentWeapon.BulletImpactPrefab.Clone( position );
+		impact.WorldRotation = Rotation.LookAt( normal, Vector3.Up );
 	}
 }

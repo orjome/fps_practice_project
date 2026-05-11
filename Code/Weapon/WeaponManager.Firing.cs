@@ -20,6 +20,8 @@ public sealed partial class WeaponManager : Component
 		{
 			Log.Info( "Click! Magazine empty." );
 			PlaySoundIfValid( CurrentWeapon.EmptySound );
+			PlaySoundIfValid( CurrentWeapon.FireSound );
+			SpawnMuzzleFlash();
 
 			nextFireTime = Time.Now + 0.2f;
 

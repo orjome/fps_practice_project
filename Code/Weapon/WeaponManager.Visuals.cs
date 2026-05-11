@@ -13,6 +13,8 @@ public sealed partial class WeaponManager : Component
 
 	[Property, Group( "Visuals" )]
 	public bool ShowWorldModel { get; set; } = true;
+	[Property, Group( "Visuals" )]
+	public GameObject MuzzlePoint { get; set; }
 
 	[Property, Group( "Visuals" )]
 	public bool ViewModelRootFollowsCamera { get; set; } = true;
@@ -144,4 +146,16 @@ public sealed partial class WeaponManager : Component
 			CurrentWeapon.WorldModelScale
 		);
 	}
+		public void SpawnMuzzleFlash()
+	{
+		if ( CurrentWeapon?.MuzzleFlashPrefab is null )
+			return;
+
+		if ( !MuzzlePoint.IsValid() )
+			return;
+
+		var flash = CurrentWeapon.MuzzleFlashPrefab.Clone( MuzzlePoint.WorldPosition );
+		flash.WorldRotation = MuzzlePoint.WorldRotation;
+	}
 }
+

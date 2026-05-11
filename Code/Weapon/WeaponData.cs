@@ -136,4 +136,9 @@ public partial class WeaponData : GameResource
 
 	[Property, Group( "Audio" )]
 	public SoundEvent ReloadCompleteSound { get; set; }
+	[Property, Group( "Effects" )]
+	public GameObject MuzzleFlashPrefab { get; set; }
+
+	[Property, Group( "Effects" )]
+	public GameObject BulletImpactPrefab { get; set; }
 }
