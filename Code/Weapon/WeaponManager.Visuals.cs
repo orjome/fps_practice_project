@@ -40,6 +40,8 @@ public sealed partial class WeaponManager : Component
 		if ( !activeViewModel.IsValid() || CurrentWeapon is null )
 			return;
 
+		UpdateViewModelAnimation();
+
 		float speed = isAiming ? CurrentWeapon.AimInSpeed : CurrentWeapon.AimOutSpeed;
 
 		Vector3 targetPos = isAiming
@@ -50,8 +52,10 @@ public sealed partial class WeaponManager : Component
 			? Rotation.From( CurrentWeapon.AimRotationOffset )
 			: Rotation.From( CurrentWeapon.ViewModelRotationOffset );
 
-		activeViewModel.LocalPosition = activeViewModel.LocalPosition.LerpTo( targetPos, speed * Time.Delta );
-		activeViewModel.LocalRotation = Rotation.Lerp( activeViewModel.LocalRotation, targetRot, speed * Time.Delta );
+		var animRot = new Angles( currentAnimRot.x, currentAnimRot.y, currentAnimRot.z );
+
+		activeViewModel.LocalPosition = activeViewModel.LocalPosition.LerpTo( targetPos + currentAnimPos, speed * Time.Delta );
+		activeViewModel.LocalRotation = Rotation.Lerp( activeViewModel.LocalRotation, Rotation.From( targetRot.Angles() + animRot ), speed * Time.Delta );
 	}
 
 	private void RefreshWeaponVisuals()

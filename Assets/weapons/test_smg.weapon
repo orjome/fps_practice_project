@@ -15,7 +15,7 @@
   "MaxSpread": 5.8,
   "SpreadPerShot": 0.42,
   "SpreadRecoverySpeed": 3,
-  "AimFOV": 60,
+  "AimFOV": 75,
   "AimSensitivity": 0.6,
   "AimInSpeed": 8,
   "AimOutSpeed": 10,
@@ -32,7 +32,7 @@
     "_type": "gameobject",
     "prefab": "prefab/v_mp5.prefab"
   },
-  "ViewModelPositionOffset": "0,0,0",
+  "ViewModelPositionOffset": "6,0,0",
   "ViewModelRotationOffset": "0,0,0",
   "ViewModelScale": 1,
   "WorldModelPrefab": {
